@@ -1,0 +1,3117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr Leek Science — AQA GCSE Chemistry Topic 8: Chemical Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ==========================================================================
+       MR LEEK SCIENCE — CRIMSON / RUBY RED DESIGN TOKENS (TOPIC 8)
+       ========================================================================== */
+    :root {
+      --crimson-950: #1f070a;
+      --crimson-900: #450a0a;
+      --crimson-800: #7f1d1d;
+      --ruby-700: #991b1b;
+      --ruby-600: #b91c1c;
+      --ruby-500: #dc2626;
+      --ruby-400: #ef4444;
+
+      --rose-200: #fecaca;
+      --rose-100: #fee2e2;
+      --rose-50: #fef2f2;
+
+      --bg-page: #f8fafc;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+
+      --blue-100: #e0f2fe;
+      --blue-700: #0369a1;
+      --purple-100: #f3e8ff;
+      --purple-700: #7e22ce;
+
+      --emerald-700: #047857;
+      --emerald-600: #059669;
+      --emerald-100: #d1fae5;
+      --emerald-50: #ecfdf5;
+
+      --amber-700: #b45309;
+      --amber-600: #d97706;
+      --amber-100: #fef3c7;
+      --amber-50: #fffbeb;
+
+      --shadow-shell: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --shadow-cta: 0 6px 18px -2px rgba(185, 28, 28, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--slate-900);
+      min-height: 100vh;
+      padding: 1.5rem 1rem 3rem;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .heading-font {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* ==========================================================================
+       CENTERED MAIN CARD CONTAINER
+       ========================================================================== */
+    .app-container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid var(--slate-200);
+      box-shadow: var(--shadow-shell);
+      overflow: hidden;
+    }
+
+    /* ==========================================================================
+       TOP CRIMSON BANNER HEADER
+       ========================================================================== */
+    .banner-header {
+      background: linear-gradient(135deg, #1f070a 0%, #7f1d1d 100%);
+      padding: 32px 36px;
+      color: #ffffff;
+      position: relative;
+    }
+
+    .banner-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .spec-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--rose-200);
+    }
+
+    .brand-tag {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .banner-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.22;
+      letter-spacing: -0.015em;
+      margin-bottom: 8px;
+    }
+
+    .banner-subtitle {
+      font-size: 0.94rem;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 800px;
+      line-height: 1.52;
+      font-weight: 400;
+    }
+
+    /* ==========================================================================
+       WHITE FORM BODY
+       ========================================================================== */
+    .card-body {
+      padding: 28px 36px 36px;
+    }
+
+    .section-block {
+      margin-bottom: 26px;
+    }
+
+    /* Row 1: Student Name & Email Address */
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field-label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--slate-800);
+      margin-bottom: 8px;
+    }
+
+    .field-label .req-star {
+      color: var(--ruby-600);
+      margin-left: 2px;
+    }
+
+    .field-label .opt-muted {
+      color: var(--slate-400);
+      font-weight: 500;
+      margin-left: 3px;
+    }
+
+    .text-input {
+      width: 100%;
+      padding: 12px 15px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--slate-900);
+      background: #ffffff;
+      border: 1.5px solid var(--slate-300);
+      border-radius: 12px;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .text-input::placeholder {
+      color: var(--slate-400);
+    }
+
+    .text-input:focus {
+      outline: none;
+      border-color: var(--ruby-600);
+      box-shadow: 0 0 0 3.5px rgba(185, 28, 28, 0.14);
+    }
+
+    .text-input.input-error {
+      border-color: var(--ruby-500);
+      background-color: var(--rose-50);
+      animation: shakeInput 0.34s ease;
+    }
+
+    .error-hint {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--ruby-600);
+      margin-top: 5px;
+    }
+
+    @keyframes shakeInput {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-6px); }
+      40% { transform: translateX(6px); }
+      60% { transform: translateX(-4px); }
+      80% { transform: translateX(4px); }
+    }
+
+    /* Section Header Bar */
+    .section-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .selected-tier-pill {
+      background: var(--rose-50);
+      border: 1px solid var(--rose-200);
+      color: var(--ruby-600);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .avail-count-text {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--slate-500);
+    }
+
+    /* Row 2: 3-Column Tier Selection Grid */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .tier-card {
+      background: #ffffff;
+      border: 2px solid var(--slate-200);
+      border-radius: 16px;
+      padding: 18px 18px 20px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.18s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .tier-card:hover {
+      border-color: var(--slate-300);
+      background: #fcfcfd;
+    }
+
+    .tier-card.selected {
+      border-color: var(--ruby-500);
+      background: var(--rose-50);
+      box-shadow: 0 4px 14px rgba(185, 28, 28, 0.09);
+    }
+
+    .tier-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .spec-chip {
+      font-size: 0.69rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .chip-blue {
+      background: var(--blue-100);
+      color: var(--blue-700);
+    }
+
+    .chip-rose {
+      background: var(--rose-100);
+      color: var(--ruby-600);
+    }
+
+    .chip-purple {
+      background: var(--purple-100);
+      color: var(--purple-700);
+    }
+
+    .radio-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid var(--slate-300);
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.16s ease;
+      flex-shrink: 0;
+    }
+
+    .radio-circle svg {
+      width: 13px;
+      height: 13px;
+      stroke: var(--slate-300);
+      stroke-width: 2.8;
+      fill: none;
+    }
+
+    .tier-card.selected .radio-circle {
+      background: var(--ruby-600);
+      border-color: var(--ruby-600);
+    }
+
+    .tier-card.selected .radio-circle svg {
+      stroke: #ffffff;
+    }
+
+    .tier-card-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 8px;
+    }
+
+    .tier-card-desc {
+      font-size: 0.83rem;
+      color: var(--slate-600);
+      line-height: 1.52;
+    }
+
+    /* Row 3: 2-Column Quiz Focus Grid */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .focus-card {
+      background: #ffffff;
+      border: 2px solid var(--slate-200);
+      border-radius: 16px;
+      padding: 16px 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      text-align: left;
+      transition: all 0.18s ease;
+    }
+
+    .focus-card:hover {
+      border-color: var(--slate-300);
+      background: #fcfcfd;
+    }
+
+    .focus-card.selected {
+      border-color: var(--ruby-500);
+      background: var(--rose-50);
+      box-shadow: 0 4px 14px rgba(185, 28, 28, 0.09);
+    }
+
+    .focus-icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.18s ease;
+    }
+
+    .focus-icon-ruby {
+      background: var(--ruby-600);
+      color: #ffffff;
+    }
+
+    .focus-icon-amber {
+      background: var(--amber-100);
+      color: var(--amber-700);
+    }
+
+    .focus-card.selected .focus-icon-amber {
+      background: var(--ruby-600);
+      color: #ffffff;
+    }
+
+    .focus-content {
+      flex: 1;
+    }
+
+    .focus-title {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .focus-check {
+      color: var(--ruby-600);
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .focus-desc {
+      font-size: 0.82rem;
+      color: var(--slate-600);
+      line-height: 1.48;
+    }
+
+    /* Row 4: Number of Questions 5-Column Grid */
+    .count-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .count-btn {
+      background: #ffffff;
+      border: 1.5px solid var(--slate-200);
+      border-radius: 12px;
+      padding: 13px 10px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--slate-800);
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .count-btn:hover:not(.active) {
+      border-color: var(--slate-300);
+      background: var(--slate-50);
+    }
+
+    .count-btn.active {
+      background: var(--ruby-600);
+      border-color: var(--ruby-600);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(185, 28, 28, 0.28);
+    }
+
+    .cap-notice {
+      margin-top: 9px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--amber-700);
+      background: var(--amber-50);
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      padding: 7px 12px;
+    }
+
+    /* Divider + Bottom Full-Width CTA */
+    .cta-divider {
+      border: none;
+      border-top: 1px solid var(--slate-200);
+      margin: 26px 0 22px;
+    }
+
+    .btn-start-cta {
+      width: 100%;
+      background: var(--ruby-600);
+      color: #ffffff;
+      border: none;
+      border-radius: 14px;
+      padding: 16px 24px;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: var(--shadow-cta);
+      transition: background 0.18s ease, transform 0.15s ease;
+    }
+
+    .btn-start-cta:hover {
+      background: var(--crimson-800);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       SCREEN 2: ACTIVE QUIZ INTERFACE
+       ========================================================================== */
+    .quiz-hud {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .hud-badges {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hud-pill-brand {
+      background: var(--crimson-950);
+      color: #ffffff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+
+    .hud-pill-dark {
+      background: var(--crimson-800);
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .hud-pill-rose {
+      background: var(--rose-50);
+      color: var(--ruby-600);
+      border: 1px solid var(--rose-200);
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .hud-pill-amber {
+      background: var(--amber-100);
+      color: var(--amber-700);
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .hud-stats {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hud-score-badge {
+      background: var(--emerald-50);
+      color: var(--emerald-700);
+      border: 1px solid #a7f3d0;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 11px;
+      border-radius: 999px;
+    }
+
+    .hud-q-counter {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--slate-700);
+    }
+
+    .hud-change-btn {
+      background: #ffffff;
+      color: var(--slate-700);
+      border: 1.5px solid var(--slate-300);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-family: inherit;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .hud-change-btn:hover {
+      border-color: var(--ruby-600);
+      color: var(--ruby-600);
+      background: var(--rose-50);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background: var(--slate-100);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--ruby-700), var(--ruby-500));
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    .question-box {
+      background: var(--rose-50);
+      border: 1.5px solid var(--rose-200);
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin-bottom: 18px;
+    }
+
+    .q-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .q-kicker {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ruby-600);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .rp-badge {
+      background: var(--amber-100);
+      color: var(--amber-700);
+      border: 1px solid #fcd34d;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+    }
+
+    .kbd-tip {
+      font-size: 0.73rem;
+      color: var(--slate-500);
+      font-weight: 500;
+    }
+
+    .q-stem {
+      font-size: clamp(1.05rem, 2.1vw, 1.2rem);
+      font-weight: 700;
+      color: var(--slate-900);
+      line-height: 1.52;
+    }
+
+    .q-formula-box {
+      margin-top: 12px;
+      background: #ffffff;
+      border: 1px solid var(--rose-200);
+      border-left: 4px solid var(--ruby-600);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-family: "Plus Jakarta Sans", "Inter", monospace;
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--crimson-900);
+      line-height: 1.55;
+      overflow-x: auto;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 6px;
+      font-family: "Inter", sans-serif;
+      font-size: 0.84rem;
+    }
+
+    .data-table th, .data-table td {
+      border: 1px solid var(--rose-200);
+      padding: 6px 10px;
+      text-align: center;
+    }
+
+    .data-table th {
+      background: var(--rose-50);
+      color: var(--crimson-900);
+      font-weight: 700;
+    }
+
+    .data-table td {
+      background: #ffffff;
+      color: var(--slate-800);
+      font-weight: 600;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 18px;
+    }
+
+    .opt-btn {
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      border: 2px solid var(--slate-200);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-family: inherit;
+      font-size: 0.96rem;
+      font-weight: 500;
+      color: var(--slate-800);
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      transition: all 0.15s ease;
+    }
+
+    .opt-btn:hover:not(:disabled) {
+      border-color: var(--ruby-500);
+      background: var(--rose-50);
+    }
+
+    .opt-btn:disabled {
+      cursor: default;
+    }
+
+    .opt-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--slate-100);
+      color: var(--slate-700);
+      font-size: 0.82rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .opt-btn.correct {
+      border-color: var(--emerald-600);
+      background: var(--emerald-50);
+      color: var(--slate-900);
+    }
+
+    .opt-btn.correct .opt-letter {
+      background: var(--emerald-600);
+      color: #ffffff;
+    }
+
+    .opt-btn.incorrect {
+      border-color: var(--ruby-600);
+      background: var(--rose-50);
+      color: var(--crimson-900);
+    }
+
+    .opt-btn.incorrect .opt-letter {
+      background: var(--ruby-600);
+      color: #ffffff;
+    }
+
+    .opt-btn.dimmed {
+      opacity: 0.55;
+    }
+
+    .feedback-panel {
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      animation: fadeSlide 0.22s ease;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .feedback-panel.fb-pass {
+      background: var(--emerald-50);
+      border: 1px solid #a7f3d0;
+      border-left: 5px solid var(--emerald-600);
+    }
+
+    .feedback-panel.fb-fail {
+      background: var(--rose-50);
+      border: 1px solid var(--rose-200);
+      border-left: 5px solid var(--ruby-600);
+    }
+
+    .fb-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .fb-status {
+      font-weight: 800;
+      font-size: 0.98rem;
+    }
+
+    .fb-pass .fb-status { color: var(--emerald-700); }
+    .fb-fail .fb-status { color: var(--ruby-600); }
+
+    .fb-chip {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--slate-700);
+      border: 1px solid var(--slate-200);
+    }
+
+    .fb-text {
+      font-size: 0.91rem;
+      color: var(--slate-800);
+      line-height: 1.56;
+    }
+
+    .quiz-bottom-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 14px;
+      border-top: 1px solid var(--slate-200);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--slate-700);
+      border: 1.5px solid var(--slate-300);
+      border-radius: 12px;
+      padding: 11px 18px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--slate-50);
+      border-color: var(--slate-400);
+    }
+
+    .btn-primary-sm {
+      background: var(--ruby-600);
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 22px;
+      font-family: inherit;
+      font-size: 0.94rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(185, 28, 28, 0.25);
+      transition: background 0.16s ease;
+    }
+
+    .btn-primary-sm:hover {
+      background: var(--crimson-800);
+    }
+
+    /* ==========================================================================
+       SCREEN 3: DIAGNOSTIC RESULTS DASHBOARD
+       ========================================================================== */
+    .report-hero-box {
+      background: var(--rose-50);
+      border: 1.5px solid var(--rose-200);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .report-student-line {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ruby-600);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .report-score-row {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .report-pct {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: clamp(2.5rem, 5vw, 3.3rem);
+      font-weight: 800;
+      color: var(--ruby-600);
+      line-height: 1;
+    }
+
+    .report-fraction {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--slate-600);
+    }
+
+    .grade-pill {
+      display: inline-block;
+      background: var(--crimson-800);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .report-summary-msg {
+      font-size: 0.93rem;
+      color: var(--slate-700);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .report-btn-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .mastery-section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1.5px solid var(--slate-200);
+    }
+
+    .mastery-section-head h3 {
+      font-size: 1.05rem;
+      color: var(--slate-900);
+    }
+
+    .legend-row {
+      display: flex;
+      gap: 8px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      flex-wrap: wrap;
+    }
+
+    .tag-g { background: var(--emerald-50); color: var(--emerald-700); padding: 3px 9px; border-radius: 999px; }
+    .tag-a { background: var(--amber-50); color: var(--amber-700); padding: 3px 9px; border-radius: 999px; }
+    .tag-r { background: var(--rose-50); color: var(--ruby-600); padding: 3px 9px; border-radius: 999px; }
+
+    .mastery-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .mastery-item {
+      border: 1.5px solid var(--slate-200);
+      border-radius: 14px;
+      padding: 14px 16px;
+      background: #ffffff;
+    }
+
+    .mastery-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .mastery-name {
+      font-weight: 700;
+      font-size: 0.94rem;
+      color: var(--slate-900);
+    }
+
+    .mastery-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-chip {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .sc-strong { background: var(--emerald-100); color: var(--emerald-700); }
+    .sc-dev { background: var(--amber-100); color: var(--amber-700); }
+    .sc-weak { background: var(--rose-100); color: var(--ruby-600); }
+
+    .mastery-bar-track {
+      width: 100%;
+      height: 8px;
+      background: var(--slate-100);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 7px;
+    }
+
+    .mastery-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+    }
+
+    .fill-g { background: var(--emerald-600); }
+    .fill-a { background: var(--amber-600); }
+    .fill-r { background: var(--ruby-600); }
+
+    .mastery-tip {
+      font-size: 0.82rem;
+      color: var(--slate-600);
+      line-height: 1.5;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .review-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .review-card {
+      border: 1.5px solid var(--slate-200);
+      border-left: 5px solid var(--slate-400);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .review-card.rc-ok { border-left-color: var(--emerald-600); }
+    .review-card.rc-bad { border-left-color: var(--ruby-600); }
+
+    .rc-kicker {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--ruby-600);
+      margin-bottom: 4px;
+    }
+
+    .rc-q {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+
+    .rc-ans {
+      font-size: 0.86rem;
+      margin-bottom: 3px;
+    }
+
+    .rc-exp {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--slate-200);
+      font-size: 0.84rem;
+      color: var(--slate-700);
+      line-height: 1.52;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--slate-400);
+      margin-top: 1.5rem;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 820px) {
+      .tier-grid {
+        grid-template-columns: 1fr;
+      }
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 0.75rem 0.65rem 2rem;
+      }
+      .banner-header {
+        padding: 24px 20px;
+      }
+      .card-body {
+        padding: 20px 18px 26px;
+      }
+      .input-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .count-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .kbd-tip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- ======================================================================
+         CRIMSON HEADER BANNER
+         ====================================================================== -->
+    <header class="banner-header">
+      <div class="banner-top-row">
+        <span class="spec-pill">TOPIC 8 &bull; PAPER 2 REVISION (8462 &amp; 8464)</span>
+        <span class="brand-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fecaca" stroke-width="2.2">
+            <path d="M9 3h6"></path>
+            <path d="M10 3v5.5L4.5 18A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-3L14 8.5V3"></path>
+            <path d="M7 15h10"></path>
+          </svg>
+          Mr Leek Science
+        </span>
+      </div>
+      <h1 id="banner-main-title" class="banner-title">Configure Your Chemical Analysis Quiz</h1>
+      <p id="banner-main-sub" class="banner-subtitle">Enter your name, choose your tier or Separate Chemistry pathway, select either all Topic 8 content or a focused Required Practicals drill, and pick your question count.</p>
+    </header>
+
+    <!-- ======================================================================
+         VIEW 1: CONFIGURATION SCREEN
+         ====================================================================== -->
+    <main id="view-config" class="card-body">
+      <!-- Row 1: Student Name & Email Address -->
+      <div class="section-block input-grid">
+        <div class="field-group">
+          <label for="student-name" class="field-label">Student Name <span class="req-star">*</span></label>
+          <input type="text" id="student-name" class="text-input" placeholder="Enter your full name" autocomplete="name" />
+          <span id="name-error-msg" class="error-hint hidden">Please enter your name before starting the quiz.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="student-email" class="field-label">Email Address <span class="opt-muted">(Optional)</span></label>
+          <input type="email" id="student-email" class="text-input" placeholder="e.g. student@school.co.uk" autocomplete="email" />
+        </div>
+      </div>
+
+      <!-- Row 2: Select Tier / Pathway -->
+      <div class="section-block">
+        <div class="section-header-bar">
+          <span class="section-title">Select Tier / Pathway</span>
+          <span id="selected-tier-badge" class="selected-tier-pill">Higher Tier Selected</span>
+        </div>
+
+        <div class="tier-grid" role="radiogroup" aria-label="Select Tier or Pathway">
+          <!-- Foundation Tier -->
+          <div class="tier-card" id="tier-card-foundation" role="radio" aria-checked="false" tabindex="0" onclick="selectTier('foundation')" onkeydown="if(event.key==='Enter'||event.key===' ')selectTier('foundation')">
+            <div class="tier-card-top">
+              <span class="spec-chip chip-blue">COMBINED 8464</span>
+              <span class="radio-circle" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+            </div>
+            <div class="tier-card-title">Foundation Tier</div>
+            <p class="tier-card-desc">Pure substances, formulations, paper chromatography &amp; R<sub>f</sub> values, and gas tests for H<sub>2</sub>, O<sub>2</sub>, CO<sub>2</sub> &amp; Cl<sub>2</sub> (Grades 1–5).</p>
+          </div>
+
+          <!-- Higher Tier (Default Selected) -->
+          <div class="tier-card selected" id="tier-card-higher" role="radio" aria-checked="true" tabindex="0" onclick="selectTier('higher')" onkeydown="if(event.key==='Enter'||event.key===' ')selectTier('higher')">
+            <div class="tier-card-top">
+              <span class="spec-chip chip-rose">COMBINED 8464</span>
+              <span class="radio-circle" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+            </div>
+            <div class="tier-card-title">Higher Tier</div>
+            <p class="tier-card-desc">Adds mobile/stationary phase equilibria, R<sub>f</sub> calculations &amp; interpretation, pure vs impure melting/boiling curves, and multi-step gas test deductions (Grades 4–9).</p>
+          </div>
+
+          <!-- Separate Chemistry -->
+          <div class="tier-card" id="tier-card-separate" role="radio" aria-checked="false" tabindex="0" onclick="selectTier('separate')" onkeydown="if(event.key==='Enter'||event.key===' ')selectTier('separate')">
+            <div class="tier-card-top">
+              <span class="spec-chip chip-purple">TRIPLE 8462</span>
+              <span class="radio-circle" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+            </div>
+            <div class="tier-card-title">Separate Chemistry</div>
+            <p class="tier-card-desc">Full 8462 content: flame tests (Li<sup>+</sup>, Na<sup>+</sup>, K<sup>+</sup>, Ca<sup>2+</sup>, Cu<sup>2+</sup>), NaOH metal hydroxide precipitates (Al<sup>3+</sup>, Ca<sup>2+</sup>, Mg<sup>2+</sup>, Cu<sup>2+</sup>, Fe<sup>2+</sup>, Fe<sup>3+</sup>), carbonate/halide/sulfate anion tests, and Flame Emission Spectroscopy (Grades 1–9).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Quiz Focus -->
+      <div class="section-block">
+        <div class="section-header-bar">
+          <span class="section-title">Quiz Focus</span>
+        </div>
+
+        <div class="focus-grid" role="radiogroup" aria-label="Quiz Focus">
+          <!-- Option A: All Topics -->
+          <div class="focus-card selected" id="focus-card-all" role="radio" aria-checked="true" tabindex="0" onclick="selectFocus('all')" onkeydown="if(event.key==='Enter'||event.key===' ')selectFocus('all')">
+            <div class="focus-icon-box focus-icon-ruby" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <div class="focus-content">
+              <div class="focus-title">
+                <span>All Chemical Analysis Topics</span>
+                <span id="focus-check-all" class="focus-check">&#10003;</span>
+              </div>
+              <p class="focus-desc">Covers purity, formulations, chromatography, gas tests, plus Triple ion identification &amp; spectroscopy.</p>
+            </div>
+          </div>
+
+          <!-- Option B: Required Practicals Only -->
+          <div class="focus-card" id="focus-card-practicals" role="radio" aria-checked="false" tabindex="0" onclick="selectFocus('practicals')" onkeydown="if(event.key==='Enter'||event.key===' ')selectFocus('practicals')">
+            <div class="focus-icon-box focus-icon-amber" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 3h6"></path>
+                <path d="M10 3v5.5L4.5 18A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-3L14 8.5V3"></path>
+                <path d="M7 15h10"></path>
+              </svg>
+            </div>
+            <div class="focus-content">
+              <div class="focus-title">
+                <span>Required Practicals Only</span>
+                <span id="focus-check-practicals" class="focus-check hidden">&#10003;</span>
+              </div>
+              <p class="focus-desc">Focused practical drill: RP6 Combined / RP6 Separate Paper Chromatography &amp; RP7 Separate Identification of Ions by Chemical &amp; Spectroscopic Means.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4: Number of Questions -->
+      <div class="section-block" style="margin-bottom: 0;">
+        <div class="section-header-bar">
+          <span class="section-title">Number of Questions</span>
+          <span id="available-q-label" class="avail-count-text">46 unique questions available for Higher Tier</span>
+        </div>
+
+        <div class="count-grid" role="radiogroup" aria-label="Number of Questions">
+          <button type="button" class="count-btn" data-count="10" onclick="selectCount(10)">10</button>
+          <button type="button" class="count-btn active" data-count="20" onclick="selectCount(20)">20</button>
+          <button type="button" class="count-btn" data-count="30" onclick="selectCount(30)">30</button>
+          <button type="button" class="count-btn" data-count="50" onclick="selectCount(50)">50</button>
+          <button type="button" class="count-btn" data-count="80" onclick="selectCount(80)">80</button>
+        </div>
+
+        <div id="cap-feedback-banner" class="cap-notice hidden"></div>
+      </div>
+
+      <hr class="cta-divider" />
+
+      <button type="button" id="btn-start-quiz" class="btn-start-cta" onclick="launchConfiguredQuiz()">
+        Start Higher Tier Quiz (20 Questions) &rarr;
+      </button>
+    </main>
+
+    <!-- ======================================================================
+         VIEW 2: ACTIVE QUIZ RUNNER
+         ====================================================================== -->
+    <section id="view-quiz" class="card-body hidden" aria-live="polite">
+      <div class="quiz-hud">
+        <div class="hud-badges">
+          <span class="hud-pill-brand">Mr Leek Science</span>
+          <span id="hud-student-pill" class="hud-pill-dark">Student</span>
+          <span id="hud-tier-pill" class="hud-pill-rose">Higher Tier</span>
+          <span id="hud-focus-pill" class="hud-pill-rose">All Chemical Analysis Topics</span>
+          <span id="hud-retry-pill" class="hud-pill-amber hidden">Retry Missed Mode</span>
+        </div>
+
+        <div class="hud-stats">
+          <span id="hud-live-score" class="hud-score-badge">Score: 0 / 0</span>
+          <span id="hud-counter" class="hud-q-counter">Question 1 of 20</span>
+          <button type="button" class="hud-change-btn" onclick="returnToConfig()">Exit / Reconfigure</button>
+        </div>
+      </div>
+
+      <div class="progress-track">
+        <div id="quiz-progress-fill" class="progress-fill"></div>
+      </div>
+
+      <div class="question-box">
+        <div class="q-meta-row">
+          <span id="q-kicker-label" class="q-kicker">Question 1 &bull; Sub-topic</span>
+          <span class="kbd-tip">Shortcuts: 1–4 or A–D to answer &bull; Enter for Next</span>
+        </div>
+        <div id="q-stem-text" class="q-stem">Question stem</div>
+        <div id="q-formula-box" class="q-formula-box hidden"></div>
+      </div>
+
+      <div id="quiz-options-list" class="options-list"></div>
+
+      <div id="quiz-feedback-panel" class="feedback-panel hidden">
+        <div class="fb-top">
+          <span id="fb-status-text" class="fb-status"></span>
+          <span class="fb-chip">AQA Examiner Insight</span>
+        </div>
+        <div id="fb-insight-text" class="fb-text"></div>
+      </div>
+
+      <div class="quiz-bottom-actions">
+        <button type="button" class="btn-secondary" onclick="returnToConfig()">&larr; Exit / Reconfigure</button>
+        <button type="button" id="btn-next-question" class="btn-primary-sm hidden" onclick="advanceQuestion()">Next Question &rarr;</button>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 3: DIAGNOSTIC RESULTS DASHBOARD
+         ====================================================================== -->
+    <section id="view-report" class="card-body hidden">
+      <div class="report-hero-box">
+        <div id="rep-student-header" class="report-student-line">Diagnostic Report &bull; Student</div>
+        <div class="report-score-row">
+          <span id="rep-pct-val" class="report-pct">85%</span>
+          <span id="rep-frac-val" class="report-fraction">(17 / 20)</span>
+        </div>
+        <div id="rep-grade-pill" class="grade-pill">Estimated AQA Indicator: Grade 8–9</div>
+        <p id="rep-msg-text" class="report-summary-msg"></p>
+      </div>
+
+      <div class="report-btn-row">
+        <button type="button" id="btn-retry-missed" class="btn-primary-sm" onclick="startRetryMissed()">Retry Missed Questions (3)</button>
+        <button type="button" class="btn-secondary" onclick="launchConfiguredQuiz()">Retake Same Quiz</button>
+        <button type="button" class="btn-secondary" onclick="returnToConfig()">Configure New Quiz</button>
+      </div>
+
+      <div class="mastery-section-head">
+        <h3>Sub-Topic Mastery Breakdown</h3>
+        <div class="legend-row">
+          <span class="tag-g">Strong Area (&ge;80%)</span>
+          <span class="tag-a">Developing (50–79%)</span>
+          <span class="tag-r">Priority Revision (&lt;50%)</span>
+        </div>
+      </div>
+
+      <div id="rep-mastery-grid" class="mastery-grid"></div>
+
+      <div class="review-header">
+        <h3 style="font-size: 1.05rem; color: var(--slate-900);">Full Question-by-Question Review</h3>
+        <button type="button" id="btn-toggle-review" class="btn-secondary" onclick="toggleReviewSection()">Show Full Question-by-Question Review</button>
+      </div>
+
+      <div id="rep-review-list" class="review-list hidden"></div>
+    </section>
+  </div>
+
+  <p class="footer-note">&copy; Mr Leek Science &bull; AQA GCSE Chemistry (8462 &amp; 8464) Topic 8 Chemical Analysis Interactive Assessment</p>
+
+  <script>
+    /* ==========================================================================
+       AQA GCSE CHEMISTRY TOPIC 8 QUESTION BANK (74 DISTINCT QUESTIONS)
+       Subtopics:
+       1. Purity, Formulations & Melting/Boiling Points (14 Qs)
+       2. Chromatography & Required Practical 6 (18 Qs)
+       3. Identification of Common Gases (14 Qs)
+       4. Positive Ion Tests — Flame Tests & NaOH (14 Qs) [Separate 8462]
+       5. Negative Ion Tests & Instrumental Spectroscopy (14 Qs) [Separate 8462]
+       ========================================================================== */
+    const SUBTOPIC_GUIDANCE = {
+      "Purity, Formulations & Melting/Boiling Points": "Remember the strict chemical definition: a pure substance is a single element or compound not mixed with any other substance. Pure substances melt and boil at sharp, specific temperatures (flat horizontal plateaus on heating/cooling curves), whereas impurities lower the melting point, raise the boiling point, and cause melting/boiling over a range of temperatures. Formulations are useful mixtures designed with carefully measured quantities (e.g. fuels, cleaning agents, paints, medicines, alloys, fertilisers, foods).",
+      "Chromatography & Required Practical 6": "Revise Required Practical 6: draw the baseline in pencil (graphite is insoluble; ink would dissolve and smudge), keep the solvent level below the baseline, and measure from the baseline to the centre of the spot and to the solvent front. R<sub>f</sub> = distance moved by substance &divide; distance moved by solvent (always between 0 and 1, with no units). Separation depends on the distribution of substances between the mobile phase (solvent) and stationary phase (paper).",
+      "Identification of Common Gases": "Memorise the four standard AQA gas tests and exact observations: Hydrogen (lit splint &rarr; squeaky pop), Oxygen (glowing splint &rarr; relights), Carbon dioxide (limewater / aqueous Ca(OH)<sub>2</sub> &rarr; turns cloudy/milky due to insoluble CaCO<sub>3</sub>), and Chlorine (damp blue litmus paper &rarr; bleaches white, turning red briefly first because chlorine forms an acidic solution in water).",
+      "Positive Ion Tests — Flame Tests & NaOH": "For Required Practical 7 (Triple 8462): clean a nichrome/platinum wire in concentrated HCl and a roaring blue flame. Flame colours: Li<sup>+</sup> (crimson), Na<sup>+</sup> (yellow — masks other colours), K<sup>+</sup> (lilac), Ca<sup>2+</sup> (orange-red), Cu<sup>2+</sup> (green). With NaOH(aq): Al<sup>3+</sup>, Ca<sup>2+</sup>, and Mg<sup>2+</sup> form white precipitates, but ONLY Al(OH)<sub>3</sub> dissolves in excess NaOH to give a colourless solution. Coloured precipitates: Cu<sup>2+</sup> (blue), Fe<sup>2+</sup> (green), Fe<sup>3+</sup> (brown).",
+      "Negative Ion Tests & Instrumental Spectroscopy": "For Required Practical 7 anion tests (Triple 8462): Carbonates + dilute acid &rarr; CO<sub>2</sub> effervescence (turns limewater cloudy). Halides: add dilute HNO<sub>3</sub> first (to remove CO<sub>3</sub><sup>2&minus;</sup>), then AgNO<sub>3</sub>(aq) &rarr; Cl<sup>&minus;</sup> white (AgCl), Br<sup>&minus;</sup> cream (AgBr), I<sup>&minus;</sup> yellow (AgI). Sulfates: add dilute HCl first, then BaCl<sub>2</sub>(aq) &rarr; white BaSO<sub>4</sub> precipitate. Instrumental methods (like Flame Emission Spectroscopy) are accurate, sensitive, and rapid; line wavelengths identify ions and line intensity measures concentration."
+    };
+
+    const QUESTION_POOL = [
+      // ========================================================================
+      // 1. PURITY, FORMULATIONS & MELTING/BOILING POINTS (14 Questions)
+      // ========================================================================
+      {
+        id: "T8_Q01",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "In chemistry, what is the exact scientific definition of a PURE SUBSTANCE?",
+        formulaBox: "Pure element or pure compound",
+        options: [
+          "A single element or a single compound, not mixed with any other substance",
+          "Any natural liquid that has had harmful bacteria removed, such as 'pure' bottled milk or orange juice",
+          "A mixture of two or more elements that have been stirred together evenly",
+          "A substance that has been filtered through filter paper until it looks clear"
+        ],
+        correct: 0,
+        explanation: "Examiner Tip: In everyday language 'pure' means natural or unadulterated (e.g. pure orange juice, which is actually a mixture). In chemistry, a pure substance is a single element or single compound not mixed with any other substance."
+      },
+      {
+        id: "T8_Q02",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "How can you experimentally distinguish a chemically PURE sample of aspirin from an IMPURE sample using melting point data?",
+        formulaBox: "Pure aspirin melting point = 135 &deg;C",
+        options: [
+          "Pure aspirin melts sharply at a single specific temperature (135 &deg;C), whereas impure aspirin melts at a lower temperature and over a range of temperatures",
+          "Pure aspirin melts over a wide 20 &deg;C range, whereas impure aspirin melts at a single sharp temperature",
+          "Impure aspirin melts at a much higher temperature than 135 &deg;C",
+          "Pure aspirin sublimes directly into a gas without melting"
+        ],
+        correct: 0,
+        explanation: "AQA specification rule: Pure elements and compounds melt and boil at specific temperatures. Impurities lower the melting point (and raise the boiling point) and cause the change of state to occur over a temperature range."
+      },
+      {
+        id: "T8_Q03",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "What effect does adding dissolved salt (an impurity) have on the melting point and boiling point of pure water at 1 atmosphere pressure?",
+        formulaBox: "Pure water: m.p. = 0 &deg;C, b.p. = 100 &deg;C",
+        options: [
+          "It lowers the melting point below 0 &deg;C and raises the boiling point above 100 &deg;C, causing both to occur over a temperature range",
+          "It raises the melting point above 0 &deg;C and lowers the boiling point below 100 &deg;C",
+          "It leaves both the melting point and boiling point completely unchanged",
+          "It lowers both the melting point and the boiling point by 10 &deg;C"
+        ],
+        correct: 0,
+        explanation: "This is why grit/salt is spread on icy roads in winter—the impurity lowers the freezing/melting point of water below 0 &deg;C so ice melts."
+      },
+      {
+        id: "T8_Q04",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "Four solid samples (W, X, Y, Z) are heated until they completely melt. Their melting ranges are recorded below. Which sample is a chemically PURE substance?",
+        formulaBox: "<table class='data-table'><tr><th>Sample</th><th>W</th><th>X</th><th>Y</th><th>Z</th></tr><tr><td><strong>Melting temperature (&deg;C)</strong></td><td>78 &ndash; 84</td><td>82.0</td><td>75 &ndash; 79</td><td>80 &ndash; 83</td></tr></table>",
+        options: [
+          "Sample X (melts sharply at 82.0 &deg;C)",
+          "Sample W (melts from 78 &deg;C to 84 &deg;C)",
+          "Sample Y (melts from 75 &deg;C to 79 &deg;C)",
+          "Sample Z (melts from 80 &deg;C to 83 &deg;C)"
+        ],
+        correct: 0,
+        explanation: "Only Sample X melts at a single sharp temperature (82.0 &deg;C). Samples W, Y, and Z all melt over a range of temperatures, proving they are impure mixtures."
+      },
+      {
+        id: "T8_Q05",
+        tiers: ["higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "A liquid is heated steadily and its temperature is plotted against time. How does the heating curve of a PURE liquid differ from that of an IMPURE mixture during boiling?",
+        formulaBox: "Temperature (&deg;C) vs. Time (minutes)",
+        options: [
+          "The pure liquid shows a completely flat horizontal plateau at its boiling point, whereas the impure mixture's temperature continues to rise gradually while boiling",
+          "The pure liquid's temperature rises steeper during boiling, whereas the impure mixture shows a flat horizontal line",
+          "Neither curve changes gradient during boiling",
+          "The pure liquid cools down while being heated"
+        ],
+        correct: 0,
+        explanation: "During a state change of a pure substance, all supplied thermal energy goes into overcoming intermolecular forces rather than raising kinetic energy—producing a flat horizontal line on a heating or cooling curve."
+      },
+      {
+        id: "T8_Q06",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "What is a FORMULATION in chemistry?",
+        formulaBox: null,
+        options: [
+          "A mixture that has been designed as a useful product, made by mixing components in carefully measured quantities to ensure the product has the required properties",
+          "A single pure chemical compound with a fixed molecular formula",
+          "Any waste by-product formed during fractional distillation of crude oil",
+          "A balanced symbol equation showing state symbols"
+        ],
+        correct: 0,
+        explanation: "AQA definition: A formulation is a mixture that has been designed as a useful product. Many products are complex mixtures in which each chemical has a particular purpose."
+      },
+      {
+        id: "T8_Q07",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "Which list contains ONLY examples of everyday FORMULATIONS named in the AQA GCSE Chemistry specification?",
+        formulaBox: null,
+        options: [
+          "Fuels, cleaning agents, paints, medicines, alloys, fertilisers, and foods",
+          "Distilled water, pure oxygen gas, diamond, and sodium chloride crystals",
+          "Helium, neon, argon, and krypton",
+          "Iron filings, pure copper wire, sulfur powder, and graphite"
+        ],
+        correct: 0,
+        explanation: "AQA specifies seven classic formulation examples: fuels, cleaning agents, paints, medicines, alloys, fertilisers, and foods."
+      },
+      {
+        id: "T8_Q08",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "A pharmaceutical tablet is a formulation containing an active drug, a binder (to hold the tablet together), a filler, and a smooth coating. Why are these inactive ingredients (excipients) included in exact measured proportions?",
+        formulaBox: "Active ingredient + Binder + Filler + Coating",
+        options: [
+          "So the tablet is easy to swallow, delivers the exact safe dose of active drug, and breaks down at the right rate in the body",
+          "To make the tablet chemically pure so it contains only one compound",
+          "Because the active drug is a gas at room temperature",
+          "To lower the melting point of the tablet below 0 &deg;C"
+        ],
+        correct: 0,
+        explanation: "In a medicinal formulation, each component has a specific purpose and is measured in precise quantities so the product performs safely and effectively."
+      },
+      {
+        id: "T8_Q09",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "In a liquid emulsion paint formulation, what are the roles of the PIGMENT, the BINDER (resin), and the SOLVENT?",
+        formulaBox: "Paint = Pigment + Binder + Solvent",
+        options: [
+          "Pigment gives colour; binder forms a continuous solid film holding the pigment to the wall; solvent thins the paint so it spreads easily and then evaporates",
+          "Pigment makes the paint evaporate; binder gives the colour; solvent turns it into a metal alloy",
+          "All three components are identical pure water molecules",
+          "Solvent permanently stays wet on the wall; pigment evaporates into the air"
+        ],
+        correct: 0,
+        explanation: "Every ingredient in a paint formulation has a distinct function: pigment (colour/opacity), binder (adhesion/film formation), and solvent (viscosity control, evaporating as the paint dries)."
+      },
+      {
+        id: "T8_Q10",
+        tiers: ["higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "A sample of unknown white powder begins melting at 112 &deg;C and finishes melting at 119 &deg;C. A reference textbook lists pure benzoic acid as melting at 122 &deg;C. What can be deduced about the unknown powder?",
+        formulaBox: "Observed melting range: 112–119 &deg;C vs. Reference: 122 &deg;C",
+        options: [
+          "It is impure benzoic acid (or a mixture containing benzoic acid), because impurities lower the melting point and cause melting over a range",
+          "It is 100% chemically pure benzoic acid",
+          "It is pure water ice",
+          "It must be a pure metallic element"
+        ],
+        correct: 0,
+        explanation: "Both the depressed melting point (below 122 &deg;C) and the 7 &deg;C melting range are diagnostic of an impure sample."
+      },
+      {
+        id: "T8_Q11",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "A carton of supermarket apple juice has the label '100% Pure Apple Juice'. Why would a chemist classify this juice as a MIXTURE rather than a pure substance?",
+        formulaBox: null,
+        options: [
+          "It contains many different chemical compounds (water, sugars, citric acid, vitamins, flavour esters) not chemically bonded together",
+          "Because apples grow on trees",
+          "Because it boils at a single sharp temperature of 100.0 &deg;C",
+          "Because all liquids are mixtures"
+        ],
+        correct: 0,
+        explanation: "Fruit juice contains water plus dissolved sugars, acids, and vitamins—multiple compounds mixed together, so it is not chemically pure."
+      },
+      {
+        id: "T8_Q12",
+        tiers: ["higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "A cooling curve is recorded as molten stearic acid cools from 90 &deg;C to 30 &deg;C. Between 3 minutes and 7 minutes, the temperature stays completely constant at 69 &deg;C. What is happening during this flat section?",
+        formulaBox: "Cooling curve plateau at 69 &deg;C",
+        options: [
+          "Pure stearic acid is freezing (solidifying) at its sharp melting/freezing point of 69 &deg;C, releasing latent heat as intermolecular forces form",
+          "The thermometer is broken",
+          "Stearic acid is boiling into a gas",
+          "The sample must be an impure mixture"
+        ],
+        correct: 0,
+        explanation: "A flat horizontal plateau on a cooling curve proves the substance is pure and gives its exact freezing/melting point (69 &deg;C)."
+      },
+      {
+        id: "T8_Q13",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "Which of the following substances is a chemically PURE substance?",
+        formulaBox: null,
+        options: [
+          "Distilled water (H<sub>2</sub>O)",
+          "Tap water",
+          "Sea water",
+          "Bronze alloy"
+        ],
+        correct: 0,
+        explanation: "Distilled water consists only of H<sub>2</sub>O molecules (a single compound). Tap water and sea water contain dissolved mineral ions, and bronze is an alloy mixture of copper and tin."
+      },
+      {
+        id: "T8_Q14",
+        tiers: ["higher", "separate"],
+        isPractical: false,
+        subtopic: "Purity, Formulations & Melting/Boiling Points",
+        stem: "An NPK fertiliser bag is labelled '15 : 10 : 20' (representing the exact percentage mass of nitrogen, phosphorus, and potassium compounds). Why is NPK fertiliser classified as a formulation?",
+        formulaBox: "NPK Fertiliser (15 : 10 : 20)",
+        options: [
+          "It is a designed mixture of different nutrient compounds combined in exact measured proportions to optimise plant growth",
+          "It is a single chemical element found in Group 5",
+          "It has a single sharp melting point",
+          "It is formed by fractional distillation of air"
+        ],
+        correct: 0,
+        explanation: "Fertilisers combine nitrogen, phosphorus, and potassium compounds in carefully measured ratios tailored for specific crops—the definition of a formulation."
+      },
+
+      // ========================================================================
+      // 2. CHROMATOGRAPHY & REQUIRED PRACTICAL 6 (18 Questions)
+      // ========================================================================
+      {
+        id: "T8_Q15",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "In Required Practical 6 (Paper Chromatography), what are the STATIONARY PHASE and the MOBILE PHASE?",
+        formulaBox: "Paper Chromatography Phases",
+        options: [
+          "Stationary phase: the chromatography paper (cellulose); Mobile phase: the solvent (such as water or ethanol) that moves up the paper",
+          "Stationary phase: the ink spot; Mobile phase: the glass beaker",
+          "Stationary phase: the water solvent; Mobile phase: the chromatography paper",
+          "Stationary phase: the pencil line; Mobile phase: the air in the room"
+        ],
+        correct: 0,
+        explanation: "AQA specification: Chromatography involves a stationary phase (which does not move—the paper) and a mobile phase (which moves—the solvent)."
+      },
+      {
+        id: "T8_Q16",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "When setting up Required Practical 6 (Paper Chromatography), why MUST the baseline near the bottom of the paper be drawn in PENCIL rather than pen ink?",
+        formulaBox: "Baseline drawn ~1.5 cm from bottom edge",
+        options: [
+          "Pencil graphite is insoluble in the solvent so it will not dissolve, run up the paper, or contaminate/interfere with the chromatogram",
+          "Pen ink reacts chemically with the glass beaker to shatter it",
+          "Pencil lead acts as a catalyst to speed up the solvent",
+          "Pen ink cannot make a mark on filter paper"
+        ],
+        correct: 0,
+        explanation: "Classic 2-mark AQA question: Pencil lead (graphite) is insoluble in the solvent, whereas pen ink would dissolve in the solvent and travel up the paper, ruining the results."
+      },
+      {
+        id: "T8_Q17",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "Why MUST the level of the solvent in the chromatography tank be BELOW the pencil baseline when the paper is placed inside?",
+        formulaBox: "Solvent depth &lt; height of pencil baseline",
+        options: [
+          "So the sample spots dissolve into the solvent rising through the paper rather than washing straight off into the pool of solvent at the bottom",
+          "So the pencil line dissolves into the beaker",
+          "Because the solvent will boil if it touches the pencil line",
+          "To prevent the paper from absorbing any solvent"
+        ],
+        correct: 0,
+        explanation: "If the solvent starts above the baseline, the sample dyes dissolve directly into the bulk solvent in the beaker instead of separating up the paper."
+      },
+      {
+        id: "T8_Q18",
+        tiers: ["higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "In terms of intermolecular attractions to the two phases, WHY do different substances separate and travel at different speeds during chromatography?",
+        formulaBox: "Distribution between mobile and stationary phases",
+        options: [
+          "Separation depends on the distribution of substances between the phases: a substance more soluble in the mobile phase and less strongly attracted to the stationary phase travels further up the paper",
+          "Heavier molecules sink downward while lighter molecules float upward due to gravity",
+          "Substances with higher melting points travel fastest",
+          "The stationary phase chemically decomposes larger dye molecules into smaller ones"
+        ],
+        correct: 0,
+        explanation: "AQA Higher Tier key explanation: Different substances have different attractions to the stationary phase and different solubilities in the mobile phase, so they spend different proportions of time in each phase."
+      },
+      {
+        id: "T8_Q19",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "What is the correct formula for calculating the retention factor (R<sub>f</sub> value) of a spot on a chromatogram?",
+        formulaBox: "R<sub>f</sub> calculation",
+        options: [
+          "R<sub>f</sub> = distance moved by substance &divide; distance moved by solvent",
+          "R<sub>f</sub> = distance moved by solvent &divide; distance moved by substance",
+          "R<sub>f</sub> = distance moved by substance &times; distance moved by solvent",
+          "R<sub>f</sub> = distance moved by solvent &minus; distance moved by substance"
+        ],
+        correct: 0,
+        explanation: "Always divide the smaller distance (moved by the substance spot, measured to its centre) by the larger distance (moved by the solvent front from the baseline)."
+      },
+      {
+        id: "T8_Q20",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "In a chromatography experiment, the solvent front moved 8.0 cm from the pencil baseline, and a blue dye spot moved 5.2 cm from the baseline. Calculate the R<sub>f</sub> value of the blue dye.",
+        formulaBox: "Distance moved by dye = 5.2 cm; Distance moved by solvent = 8.0 cm",
+        options: [
+          "0.65 (no units)",
+          "1.54 cm",
+          "0.65 cm",
+          "2.80"
+        ],
+        correct: 0,
+        explanation: "R<sub>f</sub> = 5.2 &divide; 8.0 = 0.65. Because R<sub>f</sub> is a ratio of two lengths (cm &divide; cm), it has NO units and is always less than 1."
+      },
+      {
+        id: "T8_Q21",
+        tiers: ["higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "A green food colouring has an R<sub>f</sub> value of 0.42 in water. If the solvent front travels 12.5 cm from the baseline, how far from the baseline will the green spot move?",
+        formulaBox: "Distance moved by substance = R<sub>f</sub> &times; Distance moved by solvent",
+        options: [
+          "5.25 cm",
+          "29.8 cm",
+          "0.034 cm",
+          "12.08 cm"
+        ],
+        correct: 0,
+        explanation: "Rearranging R<sub>f</sub> = d<sub>spot</sub> &divide; d<sub>solvent</sub> gives d<sub>spot</sub> = 0.42 &times; 12.5 = 5.25 cm."
+      },
+      {
+        id: "T8_Q22",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "How does a chromatogram show the difference between a PURE compound and a MIXTURE?",
+        formulaBox: "Comparing vertical columns on a developed chromatogram",
+        options: [
+          "A pure compound produces only ONE single spot in any solvent, whereas a mixture separates into TWO OR MORE spots",
+          "A pure compound stays on the pencil baseline, whereas a mixture reaches the solvent front",
+          "A pure compound produces three spots of identical size",
+          "A mixture always produces a single colourless spot"
+        ],
+        correct: 0,
+        explanation: "AQA specification: A pure compound will produce a single spot in all solvents, whereas the compounds in a mixture may separate into different spots depending on the solvent."
+      },
+      {
+        id: "T8_Q23",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "A spot of ink remains completely unmoved on the pencil baseline even after the water solvent reaches the top of the paper. What does this tell you, and how can you analyse it?",
+        formulaBox: "R<sub>f</sub> = 0.00 in water",
+        options: [
+          "The ink is insoluble in water; repeat the experiment using a different solvent (such as ethanol or propanone) in which it dissolves",
+          "The ink is 100% pure water",
+          "The paper was placed upside down",
+          "The R<sub>f</sub> value of the ink in every solvent is 1.00"
+        ],
+        correct: 0,
+        explanation: "If a substance is insoluble in the chosen mobile phase (e.g. water), it stays on the baseline; changing the solvent (e.g. to ethanol) allows it to dissolve and separate."
+      },
+      {
+        id: "T8_Q24",
+        tiers: ["higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "An unknown mixture M and four known pure food dyes (E102, E110, E122, E133) are tested on the same chromatogram using water as the solvent. M separates into two spots with R<sub>f</sub> = 0.30 and R<sub>f</sub> = 0.75. Look at the table below—which dyes are in M?",
+        formulaBox: "<table class='data-table'><tr><th>Known Pure Dye</th><th>E102</th><th>E110</th><th>E122</th><th>E133</th></tr><tr><td><strong>R<sub>f</sub> in water</strong></td><td>0.30</td><td>0.52</td><td>0.61</td><td>0.75</td></tr></table>",
+        options: [
+          "E102 and E133 (and no other dyes)",
+          "E110 and E122",
+          "All four dyes (E102, E110, E122, and E133)",
+          "None of the known dyes"
+        ],
+        correct: 0,
+        explanation: "Two spots in M means M contains two substances; matching their R<sub>f</sub> values (0.30 and 0.75) in the exact same solvent identifies E102 and E133."
+      },
+      {
+        id: "T8_Q25",
+        tiers: ["higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "Why might a single pure substance have DIFFERENT R<sub>f</sub> values when tested on two separate chromatograms?",
+        formulaBox: "Comparing R<sub>f</sub> values across different experiments",
+        options: [
+          "Because a different solvent (mobile phase) or a different type of chromatography paper (stationary phase) or temperature was used",
+          "Because R<sub>f</sub> values change randomly every minute",
+          "Because a longer strip of paper was used with the exact same solvent and paper",
+          "Because the spot was slightly larger"
+        ],
+        correct: 0,
+        explanation: "R<sub>f</sub> is a constant ONLY when the same solvent, stationary phase, and temperature are used; changing the solvent alters solubility and therefore changes R<sub>f</sub>."
+      },
+      {
+        id: "T8_Q26",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "In Required Practical 6, why should you mark the position of the SOLVENT FRONT with a pencil immediately after removing the paper from the tank?",
+        formulaBox: "Measuring distance moved by solvent",
+        options: [
+          "Because the solvent quickly evaporates as the paper dries, making the wet solvent front invisible before you can measure it with a ruler",
+          "To stop the spots from changing colour",
+          "Because the pencil reacts with the solvent to fix the dyes",
+          "To prevent the paper from catching fire"
+        ],
+        correct: 0,
+        explanation: "Volatile solvents like water or ethanol evaporate rapidly once removed from the beaker—marking the solvent front immediately ensures an accurate denominator for R<sub>f</sub>."
+      },
+      {
+        id: "T8_Q27",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "Why should a lid (or watch glass) be placed over the top of the beaker when running chromatography with a volatile solvent such as ethanol?",
+        formulaBox: "Closed chromatography chamber",
+        options: [
+          "To prevent the volatile solvent from evaporating into the air before it can travel up the chromatography paper",
+          "To keep oxygen out so the paper does not rust",
+          "To increase the boiling point of the dyes",
+          "So light cannot enter the beaker"
+        ],
+        correct: 0,
+        explanation: "Saturating the air inside the beaker with solvent vapour stops the solvent evaporating off the paper as it rises."
+      },
+      {
+        id: "T8_Q28",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "Why is it important to keep the sample spots on the pencil baseline SMALL and concentrated, and spaced well apart?",
+        formulaBox: "Spotting samples onto the baseline",
+        options: [
+          "So the spots do not spread sideways and overlap with neighbouring samples as they move up the paper",
+          "Because large spots have an R<sub>f</sub> value greater than 1",
+          "Because large spots do not dissolve in any solvent",
+          "To make the solvent front move twice as fast"
+        ],
+        correct: 0,
+        explanation: "Small, concentrated spots give sharp, distinct separated spots without smudging or overlapping horizontally."
+      },
+      {
+        id: "T8_Q29",
+        tiers: ["higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "When measuring the distance moved by a slightly elongated spot to calculate R<sub>f</sub>, from where to where should you measure?",
+        formulaBox: "Ruler measurement protocol",
+        options: [
+          "From the pencil baseline to the CENTRE of the spot",
+          "From the bottom edge of the paper to the top edge of the spot",
+          "From the top of the spot to the solvent front",
+          "From the pencil baseline to the bottom edge of the spot"
+        ],
+        correct: 0,
+        explanation: "Standard practical technique: always measure from the pencil baseline to the centre of the spot."
+      },
+      {
+        id: "T8_Q30",
+        tiers: ["higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "A student calculates an R<sub>f</sub> value of 1.38 for a yellow food dye. Why MUST this answer be incorrect?",
+        formulaBox: "0 &le; R<sub>f</sub> &le; 1",
+        options: [
+          "A dissolved substance is carried by the solvent, so it can never travel further than the solvent front—meaning R<sub>f</sub> can never be greater than 1",
+          "R<sub>f</sub> values must always be negative numbers",
+          "Yellow dyes always have an R<sub>f</sub> value of exactly 0.50",
+          "R<sub>f</sub> values must always be whole numbers"
+        ],
+        correct: 0,
+        explanation: "Since distance moved by substance &le; distance moved by solvent, R<sub>f</sub> must always lie between 0 and 1. Getting &gt;1 usually means the student divided solvent distance by spot distance!"
+      },
+      {
+        id: "T8_Q31",
+        tiers: ["higher", "separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "A mixture X produces THREE spots on a chromatogram. Does this prove X contains AT MOST three substances or AT LEAST three substances?",
+        formulaBox: "Interpreting spot counts",
+        options: [
+          "AT LEAST three substances—two different substances in X could happen to have the exact same R<sub>f</sub> value in that solvent and overlap as one spot",
+          "AT MOST three substances—two substances can never have the same R<sub>f</sub> value",
+          "Exactly one pure substance",
+          "Zero substances"
+        ],
+        correct: 0,
+        explanation: "Because two compounds might co-elute (have identical R<sub>f</sub> values in one solvent), three spots proves there are at least three components; testing in a second solvent can separate overlapping spots."
+      },
+      {
+        id: "T8_Q32",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Chromatography & Required Practical 6",
+        stem: "How can colourless compounds (such as amino acids or simple sugars) be made visible after separation by paper chromatography?",
+        formulaBox: "Visualising colourless spots",
+        options: [
+          "By spraying the dried chromatogram with a locating agent (such as ninhydrin) or viewing under ultraviolet (UV) light",
+          "By burning the chromatography paper in a Bunsen flame",
+          "By soaking the paper in concentrated hydrochloric acid",
+          "Colourless compounds cannot be separated by chromatography"
+        ],
+        correct: 0,
+        explanation: "A locating agent reacts with colourless spots (e.g. ninhydrin turns amino acids purple) so their positions can be measured for R<sub>f</sub> calculations."
+      },
+
+      // ========================================================================
+      // 3. IDENTIFICATION OF COMMON GASES (14 Questions)
+      // ========================================================================
+      {
+        id: "T8_Q33",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "What is the standard laboratory test and positive result for HYDROGEN gas (H<sub>2</sub>)?",
+        formulaBox: "2H<sub>2</sub>(g) + O<sub>2</sub>(g) &rarr; 2H<sub>2</sub>O(g)",
+        options: [
+          "Hold a burning (lit) splint at the open end of a test tube of the gas — hydrogen burns rapidly with a 'squeaky pop'",
+          "Insert a glowing splint — it relights",
+          "Bubble the gas through limewater — it turns milky/cloudy",
+          "Hold damp blue litmus paper in the gas — it bleaches white"
+        ],
+        correct: 0,
+        explanation: "The 'squeaky pop' is the rapid, explosive combustion of hydrogen with oxygen in the air when ignited by a lit splint."
+      },
+      {
+        id: "T8_Q34",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "What is the standard laboratory test and positive result for OXYGEN gas (O<sub>2</sub>)?",
+        formulaBox: "Testing for O<sub>2</sub>(g)",
+        options: [
+          "Insert a GLOWING wooden splint into a test tube of the gas — the glowing splint relights (bursts back into flame)",
+          "Hold a lit splint at the mouth of the tube — it makes a squeaky pop",
+          "Bubble the gas through limewater — it turns blue",
+          "Hold damp red litmus paper in the gas — it turns blue"
+        ],
+        correct: 0,
+        explanation: "Be precise: use a GLOWING splint for oxygen (which relights), and a BURNING/LIT splint for hydrogen (which pops)."
+      },
+      {
+        id: "T8_Q35",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "What is the standard laboratory test and positive result for CARBON DIOXIDE gas (CO<sub>2</sub>)?",
+        formulaBox: "Ca(OH)<sub>2</sub>(aq) + CO<sub>2</sub>(g) &rarr; CaCO<sub>3</sub>(s) + H<sub>2</sub>O(l)",
+        options: [
+          "Bubble the gas through LIMEWATER (aqueous calcium hydroxide) — the limewater turns milky / cloudy white",
+          "Insert a glowing splint — it relights",
+          "Hold damp blue litmus paper in the gas — it bleaches white",
+          "Hold a lit splint in the gas — it burns with a green flame"
+        ],
+        correct: 0,
+        explanation: "AQA specification: An aqueous solution of calcium hydroxide (limewater) turns milky (cloudy) when carbon dioxide is bubbled through it due to a fine white precipitate of insoluble calcium carbonate (CaCO<sub>3</sub>)."
+      },
+      {
+        id: "T8_Q36",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "What is the standard laboratory test and positive result for CHLORINE gas (Cl<sub>2</sub>)?",
+        formulaBox: "Testing for Cl<sub>2</sub>(g) in a fume cupboard",
+        options: [
+          "Hold DAMP BLUE LITMUS PAPER in the gas — the litmus paper turns red briefly and then bleaches WHITE",
+          "Hold dry red litmus paper in the gas — it turns dark blue",
+          "Bubble the gas through limewater — it turns milky",
+          "Hold a lit splint at the mouth of the tube — it gives a squeaky pop"
+        ],
+        correct: 0,
+        explanation: "Examiner Tip: You MUST state that the litmus paper is DAMP (moist) so chlorine can dissolve and form acidic/bleaching solutions (HCl and HClO), bleaching the litmus paper white."
+      },
+      {
+        id: "T8_Q37",
+        tiers: ["higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "Why MUST the blue litmus paper be DAMP when testing for chlorine gas, and why does it briefly turn red before bleaching white?",
+        formulaBox: "Cl<sub>2</sub>(g) + H<sub>2</sub>O(l) &#8652; HCl(aq) + HClO(aq)",
+        options: [
+          "Chlorine dissolves in the water on the damp paper to form hydrochloric acid (which turns blue litmus red) and chloric(I) acid (which bleaches the dye white)",
+          "Dry litmus paper catches fire when exposed to chlorine",
+          "Water turns chlorine into carbon dioxide",
+          "Chlorine is an alkali that forms sodium hydroxide on the paper"
+        ],
+        correct: 0,
+        explanation: "Dry chlorine gas does not bleach dry litmus paper; moisture is needed to form H<sup>+</sup> ions (red) and bleaching chlorate(I) ions (white)."
+      },
+      {
+        id: "T8_Q38",
+        tiers: ["higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "What is the chemical name and formula of the white solid precipitate that causes limewater to turn cloudy when carbon dioxide is bubbled through it?",
+        formulaBox: "Ca(OH)<sub>2</sub>(aq) + CO<sub>2</sub>(g) &rarr; ? (s) + H<sub>2</sub>O(l)",
+        options: [
+          "Calcium carbonate, CaCO<sub>3</sub>(s)",
+          "Calcium hydroxide, Ca(OH)<sub>2</sub>(s)",
+          "Calcium oxide, CaO(s)",
+          "Calcium chloride, CaCl<sub>2</sub>(s)"
+        ],
+        correct: 0,
+        explanation: "Limewater is aqueous calcium hydroxide, Ca(OH)<sub>2</sub>(aq). Reacting with CO<sub>2</sub> forms insoluble white calcium carbonate, CaCO<sub>3</sub>(s)."
+      },
+      {
+        id: "T8_Q39",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "Magnesium ribbon is added to dilute hydrochloric acid in a boiling tube, producing rapid effervescence. Which gas is produced, and how is it confirmed?",
+        formulaBox: "Mg(s) + 2HCl(aq) &rarr; MgCl<sub>2</sub>(aq) + ? (g)",
+        options: [
+          "Hydrogen (H<sub>2</sub>) — confirmed by a squeaky pop with a lit splint",
+          "Chlorine (Cl<sub>2</sub>) — confirmed by bleaching damp blue litmus paper",
+          "Oxygen (O<sub>2</sub>) — confirmed by relighting a glowing splint",
+          "Carbon dioxide (CO<sub>2</sub>) — confirmed by turning limewater milky"
+        ],
+        correct: 0,
+        explanation: "Metal + Acid &rarr; Salt + Hydrogen. Even though hydrochloric acid is used, metals displace hydrogen gas, NOT chlorine."
+      },
+      {
+        id: "T8_Q40",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "Copper(II) carbonate powder is heated strongly in a test tube, turning from green to black and releasing a gas. Which gas is released, and what test confirms it?",
+        formulaBox: "CuCO<sub>3</sub>(s) &rarr; CuO(s) + ? (g)",
+        options: [
+          "Carbon dioxide (CO<sub>2</sub>) — turns limewater milky/cloudy",
+          "Oxygen (O<sub>2</sub>) — relights a glowing splint",
+          "Hydrogen (H<sub>2</sub>) — squeaky pop with a lit splint",
+          "Chlorine (Cl<sub>2</sub>) — bleaches damp litmus paper"
+        ],
+        correct: 0,
+        explanation: "Thermal decomposition of a metal carbonate produces a metal oxide and carbon dioxide gas."
+      },
+      {
+        id: "T8_Q41",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "During the electrolysis of concentrated sodium chloride solution (brine), two gases are collected at the electrodes: one gives a squeaky pop with a lit splint, and the other bleaches damp blue litmus paper. Identify the two gases.",
+        formulaBox: "Electrolysis of NaCl(aq)",
+        options: [
+          "Hydrogen (at the cathode) and Chlorine (at the anode)",
+          "Oxygen (at the cathode) and Carbon dioxide (at the anode)",
+          "Hydrogen (at the anode) and Oxygen (at the cathode)",
+          "Chlorine (at the cathode) and Oxygen (at the anode)"
+        ],
+        correct: 0,
+        explanation: "Squeaky pop = hydrogen (H<sub>2</sub> formed at negative cathode); bleaching damp litmus = chlorine (Cl<sub>2</sub> formed at positive anode)."
+      },
+      {
+        id: "T8_Q42",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "Hydrogen peroxide solution (H<sub>2</sub>O<sub>2</sub>) decomposes rapidly when manganese(IV) oxide catalyst is added. A glowing splint inserted into the tube bursts back into flame. Which gas was produced?",
+        formulaBox: "2H<sub>2</sub>O<sub>2</sub>(aq) &rarr; 2H<sub>2</sub>O(l) + ? (g)",
+        options: [
+          "Oxygen (O<sub>2</sub>)",
+          "Hydrogen (H<sub>2</sub>)",
+          "Carbon dioxide (CO<sub>2</sub>)",
+          "Chlorine (Cl<sub>2</sub>)"
+        ],
+        correct: 0,
+        explanation: "Relighting a glowing splint is the specific test for oxygen gas (O<sub>2</sub>)."
+      },
+      {
+        id: "T8_Q43",
+        tiers: ["higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "A student tests an unknown colourless gas with a burning splint, and the flame immediately goes out (extinguishes). Does this alone prove the gas is carbon dioxide?",
+        formulaBox: "Evaluating gas test conclusions",
+        options: [
+          "No — several gases (such as nitrogen or argon) do not support combustion and will extinguish a flame; CO<sub>2</sub> must be confirmed by bubbling through limewater",
+          "Yes — carbon dioxide is the only gas that puts out a flame",
+          "No — it proves the gas must be hydrogen",
+          "Yes — because limewater turns red in nitrogen"
+        ],
+        correct: 0,
+        explanation: "Examiner Evaluation Question: Extinguishing a splint only shows the gas does not support combustion; bubbling through limewater (turns cloudy) is essential to specifically confirm CO<sub>2</sub>."
+      },
+      {
+        id: "T8_Q44",
+        tiers: ["higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "What happens if excess carbon dioxide gas continues to be bubbled through cloudy limewater for several minutes?",
+        formulaBox: "CaCO<sub>3</sub>(s) + H<sub>2</sub>O(l) + CO<sub>2</sub>(g) &rarr; Ca(HCO<sub>3</sub>)<sub>2</sub>(aq)",
+        options: [
+          "The cloudy precipitate dissolves and the solution turns colourless again because soluble calcium hydrogencarbonate is formed",
+          "The solution turns bright purple",
+          "A thick black solid forms",
+          "The limewater catches fire"
+        ],
+        correct: 0,
+        explanation: "Excess CO<sub>2</sub> reacts with insoluble CaCO<sub>3</sub> and water to form soluble calcium hydrogencarbonate, Ca(HCO<sub>3</sub>)<sub>2</sub>(aq), clearing the cloudiness."
+      },
+      {
+        id: "T8_Q45",
+        tiers: ["foundation", "higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "Which safety precaution is essential when testing for chlorine gas in a school laboratory?",
+        formulaBox: "Cl<sub>2</sub>(g) hazard classification",
+        options: [
+          "Carry out the reaction inside a fume cupboard because chlorine is a toxic, poisonous gas",
+          "Wear woollen gloves so the gas cannot touch your skin",
+          "Heat the chlorine directly over a roaring Bunsen burner",
+          "Inhale deeply to check for a swimming-pool smell"
+        ],
+        correct: 0,
+        explanation: "Chlorine is toxic and irritates the respiratory system, so experiments generating Cl<sub>2</sub> must be performed in a working fume cupboard."
+      },
+      {
+        id: "T8_Q46",
+        tiers: ["higher", "separate"],
+        isPractical: false,
+        subtopic: "Identification of Common Gases",
+        stem: "Three unlabelled gas jars contain pure samples of O<sub>2</sub>, CO<sub>2</sub>, and H<sub>2</sub>. You are ONLY allowed to use a single glowing splint to identify all three. How can you distinguish them?",
+        formulaBox: "Deduction puzzle using a glowing splint",
+        options: [
+          "Jar 1 relights the glowing splint (= O<sub>2</sub>); use that newly lit flame in Jar 2 to get a squeaky pop (= H<sub>2</sub>); Jar 3 extinguishes the flame (= CO<sub>2</sub>)",
+          "All three jars will relight the glowing splint",
+          "None of the jars can be identified with a glowing splint",
+          "Jar 1 pops with a glowing splint (= H<sub>2</sub>)"
+        ],
+        correct: 0,
+        explanation: "A classic multi-step deduction: oxygen relights the glowing splint into a burning flame, which can then ignite hydrogen with a squeaky pop and be extinguished by carbon dioxide!"
+      },
+
+      // ========================================================================
+      // 4. POSITIVE ION TESTS — FLAME TESTS & NaOH [SEPARATE 8462] (14 Qs)
+      // ========================================================================
+      {
+        id: "T8_Q47",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "In Required Practical 7 (Flame Tests), how should a nichrome or platinum wire loop be cleaned before dipping it into a metal salt sample?",
+        formulaBox: "Preparing the flame test wire loop",
+        options: [
+          "Dip the wire into concentrated hydrochloric acid and heat it in a roaring blue Bunsen flame, repeating until the flame shows no colour",
+          "Wash the wire with soap and cold tap water only",
+          "Rub the wire with sodium chloride crystals",
+          "Dip the wire in limewater and place it in a yellow safety flame"
+        ],
+        correct: 0,
+        explanation: "Concentrated HCl converts any remaining metal residues into volatile metal chlorides that vaporise off in the roaring blue flame, ensuring no cross-contamination."
+      },
+      {
+        id: "T8_Q48",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "Which option correctly matches ALL FIVE AQA GCSE Chemistry flame test colours to their metal cations?",
+        formulaBox: "Li<sup>+</sup>, Na<sup>+</sup>, K<sup>+</sup>, Ca<sup>2+</sup>, Cu<sup>2+</sup>",
+        options: [
+          "Li<sup>+</sup>: crimson; Na<sup>+</sup>: yellow; K<sup>+</sup>: lilac; Ca<sup>2+</sup>: orange-red; Cu<sup>2+</sup>: green",
+          "Li<sup>+</sup>: lilac; Na<sup>+</sup>: green; K<sup>+</sup>: yellow; Ca<sup>2+</sup>: crimson; Cu<sup>2+</sup>: orange-red",
+          "Li<sup>+</sup>: yellow; Na<sup>+</sup>: crimson; K<sup>+</sup>: orange-red; Ca<sup>2+</sup>: green; Cu<sup>2+</sup>: lilac",
+          "Li<sup>+</sup>: green; Na<sup>+</sup>: orange-red; K<sup>+</sup>: crimson; Ca<sup>2+</sup>: lilac; Cu<sup>2+</sup>: yellow"
+        ],
+        correct: 0,
+        explanation: "Memorise all five AQA flame colours: Lithium Li<sup>+</sup> (crimson), Sodium Na<sup>+</sup> (yellow), Potassium K<sup>+</sup> (lilac), Calcium Ca<sup>2+</sup> (orange-red), Copper Cu<sup>2+</sup> (green)."
+      },
+      {
+        id: "T8_Q49",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "Why is a flame test unreliable for identifying potassium ions (K<sup>+</sup>) in a mixture that also contains sodium ions (Na<sup>+</sup>)?",
+        formulaBox: "Mixture containing both K<sup>+</sup> and Na<sup>+</sup>",
+        options: [
+          "The intense yellow flame produced by sodium ions masks (hides) the fainter lilac flame of potassium ions",
+          "Sodium and potassium react together to form a colourless gas",
+          "Potassium ions do not produce any flame colour",
+          "Sodium ions turn the Bunsen flame blue"
+        ],
+        correct: 0,
+        explanation: "AQA specification point: If a sample contains a mixture of ions, some flame colours can be masked—specifically, sodium's bright yellow flame masks potassium's pale lilac flame."
+      },
+      {
+        id: "T8_Q50",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "When dilute sodium hydroxide solution, NaOH(aq), is added to solutions of Al<sup>3+</sup>, Ca<sup>2+</sup>, and Mg<sup>2+</sup> ions, all three form WHITE precipitates. How can you distinguish Al<sup>3+</sup> from Ca<sup>2+</sup> and Mg<sup>2+</sup>?",
+        formulaBox: "Adding excess NaOH(aq) to white hydroxide precipitates",
+        options: [
+          "Add excess NaOH(aq): the white precipitate of aluminium hydroxide, Al(OH)<sub>3</sub>, DISSOLVES to form a colourless solution, whereas Ca(OH)<sub>2</sub> and Mg(OH)<sub>2</sub> remain insoluble",
+          "Add excess NaOH(aq): Ca(OH)<sub>2</sub> turns bright blue while Al(OH)<sub>3</sub> turns brown",
+          "Heat the tubes: Mg(OH)<sub>2</sub> explodes",
+          "All three precipitates dissolve completely in excess NaOH(aq)"
+        ],
+        correct: 0,
+        explanation: "Key Required Practical 7 test: Al<sup>3+</sup>, Ca<sup>2+</sup>, and Mg<sup>2+</sup> all give white precipitates with NaOH, but ONLY aluminium hydroxide dissolves in excess NaOH(aq)."
+      },
+      {
+        id: "T8_Q51",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "You have two unlabelled solutions: one contains Ca<sup>2+</sup>(aq) and the other contains Mg<sup>2+</sup>(aq). Both give a white precipitate with NaOH(aq) that does NOT dissolve in excess NaOH. How do you distinguish them?",
+        formulaBox: "Distinguishing Ca<sup>2+</sup> from Mg<sup>2+</sup>",
+        options: [
+          "Perform a flame test: Ca<sup>2+</sup> gives an ORANGE-RED flame, whereas Mg<sup>2+</sup> produces NO flame colour",
+          "Add more sodium hydroxide until magnesium hydroxide turns green",
+          "Add silver nitrate solution to both tubes",
+          "Bubble carbon dioxide through both solutions"
+        ],
+        correct: 0,
+        explanation: "Because Ca(OH)<sub>2</sub> and Mg(OH)<sub>2</sub> behave identically with NaOH(aq), a flame test separates them: Ca<sup>2+</sup> gives an orange-red flame while Mg<sup>2+</sup> gives no flame colour."
+      },
+      {
+        id: "T8_Q52",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "Which option correctly gives the precipitate colours formed when sodium hydroxide solution, NaOH(aq), is added to aqueous Cu<sup>2+</sup>, Fe<sup>2+</sup>, and Fe<sup>3+</sup> ions?",
+        formulaBox: "Transition metal cations + NaOH(aq)",
+        options: [
+          "Cu<sup>2+</sup>: blue precipitate; Fe<sup>2+</sup>: green precipitate; Fe<sup>3+</sup>: brown precipitate",
+          "Cu<sup>2+</sup>: green precipitate; Fe<sup>2+</sup>: brown precipitate; Fe<sup>3+</sup>: blue precipitate",
+          "Cu<sup>2+</sup>: brown precipitate; Fe<sup>2+</sup>: blue precipitate; Fe<sup>3+</sup>: green precipitate",
+          "Cu<sup>2+</sup>: white precipitate; Fe<sup>2+</sup>: yellow precipitate; Fe<sup>3+</sup>: red precipitate"
+        ],
+        correct: 0,
+        explanation: "AQA specification colours: Copper(II) Cu<sup>2+</sup> &rarr; blue Cu(OH)<sub>2</sub>; Iron(II) Fe<sup>2+</sup> &rarr; green Fe(OH)<sub>2</sub>; Iron(III) Fe<sup>3+</sup> &rarr; brown Fe(OH)<sub>3</sub>."
+      },
+      {
+        id: "T8_Q53",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "Which is the correctly balanced IONIC EQUATION (with state symbols) for the reaction between iron(III) ions and hydroxide ions?",
+        formulaBox: "Fe<sup>3+</sup>(aq) + ? OH<sup>&minus;</sup>(aq) &rarr; ?",
+        options: [
+          "Fe<sup>3+</sup>(aq) + 3OH<sup>&minus;</sup>(aq) &rarr; Fe(OH)<sub>3</sub>(s)",
+          "Fe<sup>3+</sup>(aq) + OH<sup>&minus;</sup>(aq) &rarr; FeOH(s)",
+          "Fe<sup>2+</sup>(aq) + 2OH<sup>&minus;</sup>(aq) &rarr; Fe(OH)<sub>2</sub>(s)",
+          "Fe<sup>3+</sup>(aq) + 3OH<sup>&minus;</sup>(aq) &rarr; Fe<sub>3</sub>OH(s)"
+        ],
+        correct: 0,
+        explanation: "One Fe<sup>3+</sup> ion requires three OH<sup>&minus;</sup> ions to form neutral insoluble solid iron(III) hydroxide, Fe(OH)<sub>3</sub>(s)."
+      },
+      {
+        id: "T8_Q54",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "Which is the correctly balanced IONIC EQUATION for the precipitation of copper(II) hydroxide when sodium hydroxide is added to copper(II) sulfate solution?",
+        formulaBox: "Cu<sup>2+</sup>(aq) + ? OH<sup>&minus;</sup>(aq) &rarr; ?",
+        options: [
+          "Cu<sup>2+</sup>(aq) + 2OH<sup>&minus;</sup>(aq) &rarr; Cu(OH)<sub>2</sub>(s)",
+          "Cu<sup>+</sup>(aq) + OH<sup>&minus;</sup>(aq) &rarr; CuOH(s)",
+          "Cu<sup>2+</sup>(aq) + OH<sup>2&minus;</sup>(aq) &rarr; CuOH(s)",
+          "Cu<sup>2+</sup>(aq) + 2NaOH(aq) &rarr; CuNa<sub>2</sub>(s) + 2OH<sup>&minus;</sup>(aq)"
+        ],
+        correct: 0,
+        explanation: "Na<sup>+</sup> and SO<sub>4</sub><sup>2&minus;</sup> are spectator ions; the net ionic equation is Cu<sup>2+</sup>(aq) + 2OH<sup>&minus;</sup>(aq) &rarr; Cu(OH)<sub>2</sub>(s)."
+      },
+      {
+        id: "T8_Q55",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "An unknown compound gives a LILAC flame in a flame test and forms NO precipitate when sodium hydroxide solution is added. Which positive ion is present?",
+        formulaBox: "Flame: lilac; NaOH(aq): no precipitate",
+        options: [
+          "Potassium ion, K<sup>+</sup>",
+          "Lithium ion, Li<sup>+</sup>",
+          "Copper(II) ion, Cu<sup>2+</sup>",
+          "Calcium ion, Ca<sup>2+</sup>"
+        ],
+        correct: 0,
+        explanation: "Group 1 hydroxides (such as KOH) are soluble in water so no precipitate forms with NaOH, and the lilac flame confirms K<sup>+</sup>."
+      },
+      {
+        id: "T8_Q56",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "An unknown salt solution gives a GREEN flame in a flame test and forms a BLUE precipitate when sodium hydroxide solution is added. Identify the cation.",
+        formulaBox: "Flame: green; NaOH(aq): blue precipitate",
+        options: [
+          "Copper(II) ion, Cu<sup>2+</sup>",
+          "Iron(II) ion, Fe<sup>2+</sup>",
+          "Sodium ion, Na<sup>+</sup>",
+          "Aluminium ion, Al<sup>3+</sup>"
+        ],
+        correct: 0,
+        explanation: "Cu<sup>2+</sup> gives both a green flame test and a blue precipitate of Cu(OH)<sub>2</sub> with NaOH(aq)."
+      },
+      {
+        id: "T8_Q57",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "What happens if a green precipitate of iron(II) hydroxide, Fe(OH)<sub>2</sub>, is left standing exposed to the air for a few minutes?",
+        formulaBox: "Oxidation at the top of the test tube",
+        options: [
+          "It turns brown at the surface as iron(II) ions are oxidised by oxygen in the air to iron(III) ions, forming Fe(OH)<sub>3</sub>",
+          "It dissolves into a bright blue solution",
+          "It catches fire and emits a lilac flame",
+          "It turns into white calcium carbonate"
+        ],
+        correct: 0,
+        explanation: "Fe<sup>2+</sup> (green hydroxide) is easily oxidised in air to Fe<sup>3+</sup> (brown hydroxide), which is why a brown crust often forms at the top of the tube."
+      },
+      {
+        id: "T8_Q58",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "What is the balanced ionic equation for the formation of white aluminium hydroxide precipitate when NaOH(aq) is added dropwise to Al<sup>3+</sup>(aq)?",
+        formulaBox: "Al<sup>3+</sup>(aq) + ? OH<sup>&minus;</sup>(aq) &rarr; ?",
+        options: [
+          "Al<sup>3+</sup>(aq) + 3OH<sup>&minus;</sup>(aq) &rarr; Al(OH)<sub>3</sub>(s)",
+          "Al<sup>2+</sup>(aq) + 2OH<sup>&minus;</sup>(aq) &rarr; Al(OH)<sub>2</sub>(s)",
+          "Al<sup>3+</sup>(aq) + OH<sup>&minus;</sup>(aq) &rarr; AlOH<sup>2+</sup>(s)",
+          "3Al<sup>+</sup>(aq) + 3OH<sup>&minus;</sup>(aq) &rarr; Al<sub>3</sub>(OH)<sub>3</sub>(s)"
+        ],
+        correct: 0,
+        explanation: "Aluminium forms 3+ ions (Group 3), so 1 Al<sup>3+</sup> combines with 3 OH<sup>&minus;</sup> ions to precipitate Al(OH)<sub>3</sub>(s)."
+      },
+      {
+        id: "T8_Q59",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "Why does a Bunsen burner need to be set to a ROARING BLUE FLAME (air hole open) rather than a yellow safety flame during a flame test?",
+        formulaBox: "Bunsen burner air hole open",
+        options: [
+          "A blue flame is virtually colourless so it does not mask the metal ion's flame colour, and it is hotter so it vaporises the metal ions effectively",
+          "A yellow flame contains chlorine gas",
+          "A blue flame reacts with nichrome wire to make lithium",
+          "A yellow flame is too hot and melts the glass test tube"
+        ],
+        correct: 0,
+        explanation: "A luminous yellow flame would obscure subtle colours like lilac (K<sup>+</sup>) or orange-red (Ca<sup>2+</sup>) and lacks the thermal energy to excite electrons efficiently."
+      },
+      {
+        id: "T8_Q60",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Positive Ion Tests — Flame Tests & NaOH",
+        stem: "Which metal ion produces a CRIMSON flame in a flame test?",
+        formulaBox: "Group 1 metal cation",
+        options: [
+          "Lithium ion, Li<sup>+</sup>",
+          "Sodium ion, Na<sup>+</sup>",
+          "Potassium ion, K<sup>+</sup>",
+          "Calcium ion, Ca<sup>2+</sup>"
+        ],
+        correct: 0,
+        explanation: "Lithium ions (Li<sup>+</sup>) produce a distinctive crimson (deep red) flame."
+      },
+
+      // ========================================================================
+      // 5. NEGATIVE ION TESTS & INSTRUMENTAL SPECTROSCOPY [SEPARATE 8462] (14 Qs)
+      // ========================================================================
+      {
+        id: "T8_Q61",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "How do you test a solid or solution for CARBONATE IONS (CO<sub>3</sub><sup>2&minus;</sup>) in Required Practical 7?",
+        formulaBox: "CO<sub>3</sub><sup>2&minus;</sup>(aq) + 2H<sup>+</sup>(aq) &rarr; CO<sub>2</sub>(g) + H<sub>2</sub>O(l)",
+        options: [
+          "Add dilute acid (e.g. dilute HCl or HNO<sub>3</sub>): effervescence (fizzing) occurs, and bubbling the gas through limewater turns it milky/cloudy (confirming CO<sub>2</sub>)",
+          "Add barium chloride solution: a yellow precipitate forms",
+          "Add silver nitrate solution: a cream precipitate forms",
+          "Add sodium hydroxide solution: a blue precipitate forms"
+        ],
+        correct: 0,
+        explanation: "Carbonates react with dilute acids to produce carbon dioxide gas, which turns limewater cloudy."
+      },
+      {
+        id: "T8_Q62",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "What reagents and precipitate colours are used to test for HALIDE IONS (Cl<sup>&minus;</sup>, Br<sup>&minus;</sup>, I<sup>&minus;</sup>) in Required Practical 7?",
+        formulaBox: "Ag<sup>+</sup>(aq) + X<sup>&minus;</sup>(aq) &rarr; AgX(s)",
+        options: [
+          "Add dilute NITRIC ACID followed by SILVER NITRATE solution: Cl<sup>&minus;</sup> gives a WHITE precipitate (AgCl); Br<sup>&minus;</sup> gives a CREAM precipitate (AgBr); I<sup>&minus;</sup> gives a YELLOW precipitate (AgI)",
+          "Add dilute hydrochloric acid followed by barium chloride solution: Cl<sup>&minus;</sup> gives a white precipitate",
+          "Add dilute sulfuric acid followed by silver nitrate: Cl<sup>&minus;</sup> gives a blue precipitate",
+          "Add sodium hydroxide followed by litmus paper: Br<sup>&minus;</sup> bleaches it"
+        ],
+        correct: 0,
+        explanation: "Memorise the three silver halide precipitate colours: AgCl (white), AgBr (cream), AgI (yellow) — they get progressively darker yellow down Group 7!"
+      },
+      {
+        id: "T8_Q63",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "When testing for halide ions with silver nitrate solution, WHY must you acidify the sample with dilute NITRIC ACID (HNO<sub>3</sub>) first, and why must you NEVER use hydrochloric acid (HCl)?",
+        formulaBox: "Why HNO<sub>3</sub> instead of HCl?",
+        options: [
+          "Nitric acid removes any carbonate ions (CO<sub>3</sub><sup>2&minus;</sup>) that would otherwise form a false white precipitate of Ag<sub>2</sub>CO<sub>3</sub>; HCl cannot be used because it introduces Cl<sup>&minus;</sup> ions that give a false white AgCl precipitate",
+          "Nitric acid turns silver nitrate into barium chloride",
+          "Hydrochloric acid dissolves all silver halide precipitates instantly",
+          "Nitric acid is needed to make the solution alkaline"
+        ],
+        correct: 0,
+        explanation: "Classic 2-mark practical evaluation question: Acid removes interfering carbonate ions, and HNO<sub>3</sub> is chosen because it contains neither halide ions (like HCl) nor sulfate ions (like H<sub>2</sub>SO<sub>4</sub>)."
+      },
+      {
+        id: "T8_Q64",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "How do you test an aqueous solution for SULFATE IONS (SO<sub>4</sub><sup>2&minus;</sup>) in Required Practical 7?",
+        formulaBox: "Ba<sup>2+</sup>(aq) + SO<sub>4</sub><sup>2&minus;</sup>(aq) &rarr; BaSO<sub>4</sub>(s)",
+        options: [
+          "Add dilute HYDROCHLORIC ACID followed by BARIUM CHLORIDE solution, BaCl<sub>2</sub>(aq) — a WHITE precipitate of barium sulfate (BaSO<sub>4</sub>) forms",
+          "Add dilute nitric acid followed by silver nitrate solution — a cream precipitate forms",
+          "Add sodium hydroxide solution — a green precipitate forms",
+          "Hold damp blue litmus paper above the solution — it bleaches white"
+        ],
+        correct: 0,
+        explanation: "AQA specification: Sulfate ions in solution produce a white precipitate with barium chloride solution in the presence of dilute hydrochloric acid."
+      },
+      {
+        id: "T8_Q65",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "When testing for sulfate ions using barium chloride solution, why is dilute HYDROCHLORIC ACID added first, and why must dilute SULFURIC ACID (H<sub>2</sub>SO<sub>4</sub>) never be used?",
+        formulaBox: "Ba<sup>2+</sup>(aq) + CO<sub>3</sub><sup>2&minus;</sup>(aq) &rarr; BaCO<sub>3</sub>(s) (interfering white ppt)",
+        options: [
+          "HCl reacts with and removes any carbonate ions that would also form a white precipitate (BaCO<sub>3</sub>) with Ba<sup>2+</sup>; sulfuric acid would add SO<sub>4</sub><sup>2&minus;</sup> ions and give a false positive result",
+          "HCl turns barium chloride into silver nitrate",
+          "Sulfuric acid explodes when mixed with water",
+          "HCl makes the barium sulfate dissolve"
+        ],
+        correct: 0,
+        explanation: "Just like in the halide test, the acid removes interfering carbonate ions without introducing the ion being tested for (SO<sub>4</sub><sup>2&minus;</sup>)."
+      },
+      {
+        id: "T8_Q66",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "An unknown ionic compound X gives a YELLOW flame in a flame test, no bubbles with dilute acid, and a CREAM precipitate when acidified with HNO<sub>3</sub> and treated with AgNO<sub>3</sub>(aq). Identify compound X.",
+        formulaBox: "Cation test + Anion test = Full salt formula",
+        options: [
+          "Sodium bromide (NaBr)",
+          "Sodium chloride (NaCl)",
+          "Potassium iodide (KI)",
+          "Calcium bromide (CaBr<sub>2</sub>)"
+        ],
+        correct: 0,
+        explanation: "Yellow flame = sodium ion (Na<sup>+</sup>); cream precipitate with AgNO<sub>3</sub> = bromide ion (Br<sup>&minus;</sup>) &rarr; Sodium bromide (NaBr)."
+      },
+      {
+        id: "T8_Q67",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "An unknown ionic salt Y gives a GREEN precipitate with NaOH(aq) and a WHITE precipitate when acidified with dilute HCl and treated with BaCl<sub>2</sub>(aq). Identify compound Y.",
+        formulaBox: "Cation + Anion deduction",
+        options: [
+          "Iron(II) sulfate (FeSO<sub>4</sub>)",
+          "Iron(III) sulfate (Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>)",
+          "Copper(II) sulfate (CuSO<sub>4</sub>)",
+          "Iron(II) chloride (FeCl<sub>2</sub>)"
+        ],
+        correct: 0,
+        explanation: "Green precipitate with NaOH = iron(II) ion (Fe<sup>2+</sup>); white precipitate with acidified BaCl<sub>2</sub> = sulfate ion (SO<sub>4</sub><sup>2&minus;</sup>) &rarr; Iron(II) sulfate (FeSO<sub>4</sub>)."
+      },
+      {
+        id: "T8_Q68",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "An unknown solid Z fizzes when dilute nitric acid is added, producing a gas that turns limewater milky. A flame test on Z gives a CRIMSON flame. Identify compound Z.",
+        formulaBox: "Cation + Anion deduction",
+        options: [
+          "Lithium carbonate (Li<sub>2</sub>CO<sub>3</sub>)",
+          "Sodium carbonate (Na<sub>2</sub>CO<sub>3</sub>)",
+          "Calcium carbonate (CaCO<sub>3</sub>)",
+          "Lithium chloride (LiCl)"
+        ],
+        correct: 0,
+        explanation: "Crimson flame = Li<sup>+</sup>; effervescence with acid giving CO<sub>2</sub> = CO<sub>3</sub><sup>2&minus;</sup> &rarr; Lithium carbonate (Li<sub>2</sub>CO<sub>3</sub>)."
+      },
+      {
+        id: "T8_Q69",
+        tiers: ["separate"],
+        isPractical: false,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "What are the THREE main advantages of modern INSTRUMENTAL METHODS of analysis compared with traditional wet chemical tests?",
+        formulaBox: "AQA 8462 Instrumental Analysis Specification",
+        options: [
+          "They are ACCURATE, SENSITIVE (can detect tiny trace amounts), and RAPID (fast)",
+          "They require no electricity, use large buckets of chemicals, and take several weeks",
+          "They only work on solid rocks and cannot test liquids",
+          "They require no trained operators or calibration"
+        ],
+        correct: 0,
+        explanation: "Memorise these three exact AQA keywords for 3-mark questions: Instrumental methods are accurate, sensitive, and rapid."
+      },
+      {
+        id: "T8_Q70",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "How does FLAME EMISSION SPECTROSCOPY work to produce a line spectrum from a metal ion solution?",
+        formulaBox: "Sample solution &rarr; Flame &rarr; Spectroscope &rarr; Line spectrum",
+        options: [
+          "The sample is put into a flame and the light given out is passed through a spectroscope, producing a line spectrum of specific wavelengths unique to each metal ion",
+          "The sample is frozen in liquid nitrogen and weighed on a balance",
+          "The sample is filtered through chromatography paper using ethanol",
+          "Electricity is passed through the sample to plate pure metal onto a cathode"
+        ],
+        correct: 0,
+        explanation: "AQA specification: During flame emission spectroscopy, a sample is put into a flame and the light given out is passed through a spectroscope. The output is a line spectrum that can be analysed to identify the metal ions in the solution and measure their concentrations."
+      },
+      {
+        id: "T8_Q71",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "In Flame Emission Spectroscopy, what TWO pieces of information can be obtained from the line spectrum?",
+        formulaBox: "Line positions (wavelengths) vs. Line intensity",
+        options: [
+          "The POSITIONS (wavelengths) of the lines identify WHICH metal ions are present (even in a mixture), and the INTENSITY (brightness) of the lines measures their CONCENTRATION",
+          "The colour of the paper identifies the anion, and the mass of ash gives the boiling point",
+          "The number of lines equals the atomic mass, and the width gives the pH",
+          "Both line position and intensity measure only temperature"
+        ],
+        correct: 0,
+        explanation: "Each metal ion has a unique emission line 'fingerprint' (wavelengths), while brighter lines mean more ions are emitting light (higher concentration, read from a calibration curve)."
+      },
+      {
+        id: "T8_Q72",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "Why is Flame Emission Spectroscopy much better than a simple visual flame test when analysing a sample of river water containing a mixture of sodium and potassium ions?",
+        formulaBox: "Mixture analysis advantage",
+        options: [
+          "Flame emission spectroscopy separates the emitted light into distinct spectral lines at different wavelengths, so sodium's yellow emission does not mask potassium's lines, and it measures trace concentrations",
+          "Flame emission spectroscopy destroys all sodium ions before testing",
+          "Visual flame tests cannot be used on liquids",
+          "Flame emission spectroscopy turns potassium ions into gold"
+        ],
+        correct: 0,
+        explanation: "Unlike the human eye (which sees only one blended/masked flame colour), a spectroscope resolves every wavelength cleanly, identifying multiple metal ions simultaneously."
+      },
+      {
+        id: "T8_Q73",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "Which is the balanced IONIC EQUATION (with state symbols) for the reaction between aqueous iodide ions and silver nitrate solution?",
+        formulaBox: "Ag<sup>+</sup>(aq) + I<sup>&minus;</sup>(aq) &rarr; ?",
+        options: [
+          "Ag<sup>+</sup>(aq) + I<sup>&minus;</sup>(aq) &rarr; AgI(s)",
+          "Ag<sup>2+</sup>(aq) + 2I<sup>&minus;</sup>(aq) &rarr; AgI<sub>2</sub>(s)",
+          "Ag<sup>+</sup>(aq) + I<sup>&minus;</sup>(aq) &rarr; AgI(aq)",
+          "Ag(s) + I<sub>2</sub>(g) &rarr; AgI(s)"
+        ],
+        correct: 0,
+        explanation: "Ag<sup>+</sup>(aq) and I<sup>&minus;</sup>(aq) combine to form a yellow solid precipitate of silver iodide, AgI(s)."
+      },
+      {
+        id: "T8_Q74",
+        tiers: ["separate"],
+        isPractical: true,
+        subtopic: "Negative Ion Tests & Instrumental Spectroscopy",
+        stem: "A student wants to carry out THREE anion tests (carbonate, sulfate, and halide) on a single sample of an unknown salt solution in one sequence without wasting solution. Which order of reagents works cleanly?",
+        formulaBox: "Sequential qualitative analysis",
+        options: [
+          "1. Add dilute HNO<sub>3</sub> (test any gas with limewater for CO<sub>3</sub><sup>2&minus;</sup>) &rarr; 2. Add Ba(NO<sub>3</sub>)<sub>2</sub>(aq) (check for white BaSO<sub>4</sub>) &rarr; 3. Add AgNO<sub>3</sub>(aq) (check for AgCl/AgBr/AgI)",
+          "1. Add AgNO<sub>3</sub>(aq) first &rarr; 2. Add HCl &rarr; 3. Add NaOH",
+          "1. Add H<sub>2</sub>SO<sub>4</sub> first &rarr; 2. Add BaCl<sub>2</sub> &rarr; 3. Add AgNO<sub>3</sub>",
+          "Add all four reagents at the exact same time in one beaker"
+        ],
+        correct: 0,
+        explanation: "Using HNO<sub>3</sub> and Ba(NO<sub>3</sub>)<sub>2</sub> avoids introducing Cl<sup>&minus;</sup> or SO<sub>4</sub><sup>2&minus;</sup> ions! Testing CO<sub>3</sub><sup>2&minus;</sup> first, then SO<sub>4</sub><sup>2&minus;</sup>, and halides last prevents any false precipitates."
+      }
+    ];
+
+    /* ==========================================================================
+       APPLICATION STATE
+       ========================================================================== */
+    const configState = {
+      studentName: "",
+      studentEmail: "",
+      tier: "higher",         // 'foundation' | 'higher' | 'separate'
+      focus: "all",           // 'all' | 'practicals'
+      questionCount: 20
+    };
+
+    const quizState = {
+      questions: [],
+      currentIndex: 0,
+      answers: [],            // { question, selectedIndex, isCorrect }
+      answeredCurrent: false,
+      isRetryMode: false
+    };
+
+    const TIER_META = {
+      foundation: { name: "Foundation Tier", badge: "Foundation Tier Selected" },
+      higher: { name: "Higher Tier", badge: "Higher Tier Selected" },
+      separate: { name: "Separate Chemistry", badge: "Separate Chemistry Selected" }
+    };
+
+    const FOCUS_META = {
+      all: "All Chemical Analysis Topics",
+      practicals: "Required Practicals Only"
+    };
+
+    /* ==========================================================================
+       CONFIGURATION SCREEN INTERACTIONS
+       ========================================================================== */
+    function getFilteredPool() {
+      return QUESTION_POOL.filter(q => {
+        const tierMatch = q.tiers.includes(configState.tier);
+        const focusMatch = configState.focus === "all" ? true : q.isPractical === true;
+        return tierMatch && focusMatch;
+      });
+    }
+
+    function updateConfigUI() {
+      ["foundation", "higher", "separate"].forEach(t => {
+        const card = document.getElementById(`tier-card-${t}`);
+        const isSel = configState.tier === t;
+        card.classList.toggle("selected", isSel);
+        card.setAttribute("aria-checked", isSel ? "true" : "false");
+      });
+      document.getElementById("selected-tier-badge").textContent = TIER_META[configState.tier].badge;
+
+      ["all", "practicals"].forEach(f => {
+        const card = document.getElementById(`focus-card-${f}`);
+        const chk = document.getElementById(`focus-check-${f}`);
+        const isSel = configState.focus === f;
+        card.classList.toggle("selected", isSel);
+        card.setAttribute("aria-checked", isSel ? "true" : "false");
+        chk.classList.toggle("hidden", !isSel);
+      });
+
+      document.querySelectorAll(".count-btn").forEach(btn => {
+        const val = Number(btn.getAttribute("data-count"));
+        btn.classList.toggle("active", val === configState.questionCount);
+      });
+
+      const pool = getFilteredPool();
+      const focusSuffix = configState.focus === "practicals" ? " (Required Practicals)" : "";
+      document.getElementById("available-q-label").textContent =
+        `${pool.length} unique questions available for ${TIER_META[configState.tier].name}${focusSuffix}`;
+
+      const capBanner = document.getElementById("cap-feedback-banner");
+      const effectiveCount = Math.min(configState.questionCount, pool.length);
+
+      if (configState.questionCount > pool.length) {
+        capBanner.textContent =
+          `Note: ${TIER_META[configState.tier].name}${focusSuffix} has ${pool.length} unique questions in the bank, so your quiz will run all ${pool.length} available questions without duplicates.`;
+        capBanner.classList.remove("hidden");
+      } else {
+        capBanner.classList.add("hidden");
+      }
+
+      document.getElementById("btn-start-quiz").innerHTML =
+        `Start ${TIER_META[configState.tier].name} Quiz (${effectiveCount} Questions) &rarr;`;
+    }
+
+    function selectTier(tierKey) {
+      configState.tier = tierKey;
+      updateConfigUI();
+    }
+
+    function selectFocus(focusKey) {
+      configState.focus = focusKey;
+      updateConfigUI();
+    }
+
+    function selectCount(num) {
+      configState.questionCount = num;
+      updateConfigUI();
+    }
+
+    function shuffleArray(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function launchConfiguredQuiz() {
+      const nameInput = document.getElementById("student-name");
+      const errorMsg = document.getElementById("name-error-msg");
+      const rawName = nameInput.value.trim();
+
+      if (!rawName) {
+        nameInput.classList.remove("input-error");
+        void nameInput.offsetWidth;
+        nameInput.classList.add("input-error");
+        errorMsg.classList.remove("hidden");
+        nameInput.focus();
+        return;
+      }
+
+      nameInput.classList.remove("input-error");
+      errorMsg.classList.add("hidden");
+
+      configState.studentName = rawName;
+      configState.studentEmail = document.getElementById("student-email").value.trim();
+
+      const pool = shuffleArray(getFilteredPool());
+      const selectedQuestions = pool.slice(0, Math.min(configState.questionCount, pool.length));
+
+      quizState.questions = selectedQuestions;
+      quizState.currentIndex = 0;
+      quizState.answers = [];
+      quizState.answeredCurrent = false;
+      quizState.isRetryMode = false;
+
+      switchScreen("view-quiz");
+      document.getElementById("banner-main-title").textContent = "Topic 8: Chemical Analysis";
+      document.getElementById("banner-main-sub").textContent =
+        `${TIER_META[configState.tier].name} • ${FOCUS_META[configState.focus]}`;
+
+      renderActiveQuestion();
+    }
+
+    function startRetryMissed() {
+      const missedQuestions = quizState.answers
+        .filter(item => !item.isCorrect)
+        .map(item => item.question);
+
+      if (missedQuestions.length === 0) return;
+
+      quizState.questions = missedQuestions;
+      quizState.currentIndex = 0;
+      quizState.answers = [];
+      quizState.answeredCurrent = false;
+      quizState.isRetryMode = true;
+
+      switchScreen("view-quiz");
+      renderActiveQuestion();
+    }
+
+    function returnToConfig() {
+      switchScreen("view-config");
+      document.getElementById("banner-main-title").textContent = "Configure Your Chemical Analysis Quiz";
+      document.getElementById("banner-main-sub").textContent =
+        "Enter your name, choose your tier or Separate Chemistry pathway, select either all Topic 8 content or a focused Required Practicals drill, and pick your question count.";
+      updateConfigUI();
+    }
+
+    function switchScreen(activeId) {
+      ["view-config", "view-quiz", "view-report"].forEach(id => {
+        document.getElementById(id).classList.toggle("hidden", id !== activeId);
+      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    /* ==========================================================================
+       ACTIVE QUIZ RENDERING & LOGIC
+       ========================================================================== */
+    function renderActiveQuestion() {
+      const total = quizState.questions.length;
+      const idx = quizState.currentIndex;
+      const qObj = quizState.questions[idx];
+      quizState.answeredCurrent = false;
+
+      document.getElementById("hud-student-pill").textContent = configState.studentName;
+      document.getElementById("hud-tier-pill").textContent = TIER_META[configState.tier].name;
+      document.getElementById("hud-focus-pill").textContent = FOCUS_META[configState.focus];
+      document.getElementById("hud-retry-pill").classList.toggle("hidden", !quizState.isRetryMode);
+
+      const scoreSoFar = quizState.answers.filter(a => a.isCorrect).length;
+      document.getElementById("hud-live-score").textContent = `Score: ${scoreSoFar} / ${quizState.answers.length}`;
+      document.getElementById("hud-counter").textContent = `Question ${idx + 1} of ${total}`;
+
+      const pct = Math.round((idx / total) * 100);
+      document.getElementById("quiz-progress-fill").style.width = `${pct}%`;
+
+      const kickerEl = document.getElementById("q-kicker-label");
+      kickerEl.innerHTML = `<span>Question ${idx + 1} of ${total} &bull; ${qObj.subtopic}</span>` +
+        (qObj.isPractical ? `<span class="rp-badge">REQUIRED PRACTICAL</span>` : "");
+
+      document.getElementById("q-stem-text").innerHTML = qObj.stem;
+
+      const formulaBox = document.getElementById("q-formula-box");
+      if (qObj.formulaBox) {
+        formulaBox.innerHTML = qObj.formulaBox;
+        formulaBox.classList.remove("hidden");
+      } else {
+        formulaBox.classList.add("hidden");
+      }
+
+      const optionsContainer = document.getElementById("quiz-options-list");
+      optionsContainer.innerHTML = "";
+      const letters = ["A", "B", "C", "D"];
+
+      qObj.options.forEach((optText, optIdx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "opt-btn";
+        btn.innerHTML = `
+          <span class="opt-letter">${letters[optIdx]}</span>
+          <span>${optText}</span>
+        `;
+        btn.addEventListener("click", () => submitOption(optIdx));
+        optionsContainer.appendChild(btn);
+      });
+
+      const fbPanel = document.getElementById("quiz-feedback-panel");
+      fbPanel.className = "feedback-panel hidden";
+
+      const nextBtn = document.getElementById("btn-next-question");
+      nextBtn.classList.add("hidden");
+      nextBtn.innerHTML = idx === total - 1 ? "View Diagnostic Report &rarr;" : "Next Question &rarr;";
+    }
+
+    function submitOption(selectedIdx) {
+      if (quizState.answeredCurrent) return;
+      quizState.answeredCurrent = true;
+
+      const qObj = quizState.questions[quizState.currentIndex];
+      const isCorrect = selectedIdx === qObj.correct;
+
+      quizState.answers.push({
+        question: qObj,
+        selectedIndex: selectedIdx,
+        isCorrect: isCorrect
+      });
+
+      const scoreSoFar = quizState.answers.filter(a => a.isCorrect).length;
+      document.getElementById("hud-live-score").textContent = `Score: ${scoreSoFar} / ${quizState.answers.length}`;
+
+      const total = quizState.questions.length;
+      const donePct = Math.round(((quizState.currentIndex + 1) / total) * 100);
+      document.getElementById("quiz-progress-fill").style.width = `${donePct}%`;
+
+      const optionBtns = document.querySelectorAll("#quiz-options-list .opt-btn");
+      optionBtns.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === qObj.correct) {
+          btn.classList.add("correct");
+        } else if (idx === selectedIdx && !isCorrect) {
+          btn.classList.add("incorrect");
+        } else {
+          btn.classList.add("dimmed");
+        }
+      });
+
+      const fbPanel = document.getElementById("quiz-feedback-panel");
+      const fbStatus = document.getElementById("fb-status-text");
+      const fbInsight = document.getElementById("fb-insight-text");
+
+      fbPanel.classList.remove("hidden", "fb-pass", "fb-fail");
+      if (isCorrect) {
+        fbPanel.classList.add("fb-pass");
+        fbStatus.textContent = "✓ Correct — Full Marks!";
+      } else {
+        fbPanel.classList.add("fb-fail");
+        const correctLetter = ["A", "B", "C", "D"][qObj.correct];
+        fbStatus.textContent = `✗ Incorrect — Correct Answer: Option ${correctLetter}`;
+      }
+      fbInsight.innerHTML = qObj.explanation;
+
+      document.getElementById("btn-next-question").classList.remove("hidden");
+    }
+
+    function advanceQuestion() {
+      if (quizState.currentIndex < quizState.questions.length - 1) {
+        quizState.currentIndex++;
+        renderActiveQuestion();
+      } else {
+        showDiagnosticReport();
+      }
+    }
+
+    /* ==========================================================================
+       DIAGNOSTIC RESULTS DASHBOARD
+       ========================================================================== */
+    function showDiagnosticReport() {
+      switchScreen("view-report");
+      document.getElementById("banner-main-title").textContent = "Topic 8 Diagnostic Performance Report";
+      document.getElementById("banner-main-sub").textContent =
+        `Completed by ${configState.studentName}${configState.studentEmail ? ` (${configState.studentEmail})` : ""} • ${TIER_META[configState.tier].name} • ${FOCUS_META[configState.focus]}`;
+
+      const total = quizState.answers.length;
+      const correct = quizState.answers.filter(a => a.isCorrect).length;
+      const missed = total - correct;
+      const pct = Math.round((correct / total) * 100);
+
+      document.getElementById("rep-student-header").textContent =
+        `${configState.studentName} • ${TIER_META[configState.tier].name} • ${FOCUS_META[configState.focus]}${quizState.isRetryMode ? " (Retry Round)" : ""}`;
+      document.getElementById("rep-pct-val").textContent = `${pct}%`;
+      document.getElementById("rep-frac-val").textContent = `(${correct} / ${total})`;
+      document.getElementById("rep-grade-pill").textContent = estimateAqaGrade(pct, configState.tier);
+
+      const msgEl = document.getElementById("rep-msg-text");
+      if (pct === 100) {
+        msgEl.textContent = `Outstanding work, ${configState.studentName}! You scored 100% across every question. Your AQA Topic 8 Chemical Analysis knowledge is exam-ready.`;
+      } else if (pct >= 80) {
+        msgEl.textContent = `Strong performance, ${configState.studentName}! You have a solid command of Chemical Analysis. Click 'Retry Missed Questions' below to master the final ${missed} question${missed === 1 ? "" : "s"}.`;
+      } else if (pct >= 50) {
+        msgEl.textContent = `Good progress, ${configState.studentName}! Review the amber and crimson sub-topics below, study the AQA Examiner Insights, and retry your missed questions to push into the top grade boundaries.`;
+      } else {
+        msgEl.textContent = `Great active recall practice, ${configState.studentName}! Focus on the Priority Revision sub-topics in crimson below, read the tailored AQA revision tips, and retry your missed questions.`;
+      }
+
+      const retryBtn = document.getElementById("btn-retry-missed");
+      if (missed > 0) {
+        retryBtn.classList.remove("hidden");
+        retryBtn.textContent = `Retry Missed Questions (${missed})`;
+      } else {
+        retryBtn.classList.add("hidden");
+      }
+
+      const topicMap = {};
+      quizState.answers.forEach(entry => {
+        const t = entry.question.subtopic;
+        if (!topicMap[t]) topicMap[t] = { correct: 0, total: 0 };
+        topicMap[t].total++;
+        if (entry.isCorrect) topicMap[t].correct++;
+      });
+
+      const masteryGrid = document.getElementById("rep-mastery-grid");
+      masteryGrid.innerHTML = "";
+
+      Object.keys(topicMap).forEach(topicName => {
+        const { correct: c, total: t } = topicMap[topicName];
+        const subPct = Math.round((c / t) * 100);
+
+        let chipClass = "sc-weak";
+        let fillClass = "fill-r";
+        let statusLabel = "Priority Revision";
+
+        if (subPct >= 80) {
+          chipClass = "sc-strong";
+          fillClass = "fill-g";
+          statusLabel = "Strong Area";
+        } else if (subPct >= 50) {
+          chipClass = "sc-dev";
+          fillClass = "fill-a";
+          statusLabel = "Developing";
+        }
+
+        const tip = subPct >= 80
+          ? "Secure understanding demonstrated—maintain with spaced active recall."
+          : (SUBTOPIC_GUIDANCE[topicName] || "Review examiner insights and retry missed questions in this sub-topic.");
+
+        const card = document.createElement("div");
+        card.className = "mastery-item";
+        card.innerHTML = `
+          <div class="mastery-item-top">
+            <span class="mastery-name">${topicName}</span>
+            <div class="mastery-right">
+              <span class="status-chip ${chipClass}">${statusLabel}</span>
+              <span style="font-size:0.84rem; font-weight:700; color:var(--slate-700);">${c}/${t} (${subPct}%)</span>
+            </div>
+          </div>
+          <div class="mastery-bar-track">
+            <div class="mastery-bar-fill ${fillClass}" style="width: ${subPct}%"></div>
+          </div>
+          <div class="mastery-tip">${tip}</div>
+        `;
+        masteryGrid.appendChild(card);
+      });
+
+      const reviewList = document.getElementById("rep-review-list");
+      reviewList.innerHTML = "";
+      reviewList.classList.add("hidden");
+      document.getElementById("btn-toggle-review").textContent = "Show Full Question-by-Question Review";
+
+      const letters = ["A", "B", "C", "D"];
+      quizState.answers.forEach((entry, idx) => {
+        const q = entry.question;
+        const userAns = `${letters[entry.selectedIndex]}. ${q.options[entry.selectedIndex]}`;
+        const rightAns = `${letters[q.correct]}. ${q.options[q.correct]}`;
+
+        const item = document.createElement("div");
+        item.className = `review-card ${entry.isCorrect ? "rc-ok" : "rc-bad"}`;
+        item.innerHTML = `
+          <div class="rc-kicker">Question ${idx + 1} &bull; ${q.subtopic} &bull; ${entry.isCorrect ? "Correct" : "Incorrect"}</div>
+          <div class="rc-q">${q.stem}</div>
+          <div class="rc-ans"><strong>Your Answer:</strong> <span style="color:${entry.isCorrect ? "var(--emerald-700)" : "var(--ruby-600)"}; font-weight:600;">${userAns}</span></div>
+          ${!entry.isCorrect ? `<div class="rc-ans"><strong>Correct Answer:</strong> <span style="color:var(--emerald-700); font-weight:600;">${rightAns}</span></div>` : ""}
+          <div class="rc-exp"><strong>AQA Examiner Insight:</strong> ${q.explanation}</div>
+        `;
+        reviewList.appendChild(item);
+      });
+    }
+
+    function estimateAqaGrade(pct, tier) {
+      if (tier === "foundation") {
+        if (pct >= 80) return "Estimated AQA Indicator: Grade 4–5 (Maximum Foundation)";
+        if (pct >= 62) return "Estimated AQA Indicator: Grade 4 (Standard Pass)";
+        if (pct >= 45) return "Estimated AQA Indicator: Grade 3";
+        return "Estimated AQA Indicator: Grade 1–2 (Keep Practising)";
+      }
+      if (pct >= 80) return "Estimated AQA Indicator: Grade 8–9";
+      if (pct >= 65) return "Estimated AQA Indicator: Grade 6–7";
+      if (pct >= 48) return "Estimated AQA Indicator: Grade 4–5";
+      return "Estimated AQA Indicator: Grade 3 / Below (Target Revision)";
+    }
+
+    function toggleReviewSection() {
+      const list = document.getElementById("rep-review-list");
+      const btn = document.getElementById("btn-toggle-review");
+      const isHidden = list.classList.toggle("hidden");
+      btn.textContent = isHidden ? "Show Full Question-by-Question Review" : "Hide Full Question-by-Question Review";
+      if (!isHidden) {
+        list.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    /* ==========================================================================
+       KEYBOARD SHORTCUTS & INITIALISATION
+       ========================================================================== */
+    document.getElementById("student-name").addEventListener("input", function () {
+      if (this.value.trim()) {
+        this.classList.remove("input-error");
+        document.getElementById("name-error-msg").classList.add("hidden");
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (document.getElementById("view-quiz").classList.contains("hidden")) return;
+      const key = e.key.toUpperCase();
+      if (!quizState.answeredCurrent) {
+        if (key === "1" || key === "A") submitOption(0);
+        else if (key === "2" || key === "B") submitOption(1);
+        else if (key === "3" || key === "C") submitOption(2);
+        else if (key === "4" || key === "D") submitOption(3);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        advanceQuestion();
+      }
+    });
+
+    updateConfigUI();
+  </script>
+</body>
+</html>
